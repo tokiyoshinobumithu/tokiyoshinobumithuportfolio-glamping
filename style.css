@@ -238,7 +238,7 @@ html body .header .navi-btn-menu {
   width: 100vw;
   height: 100vh;
   background: #ffc698;
-  overflow: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 500;
   transition: all 0.3s ease;
@@ -749,7 +749,8 @@ html body .main .topics-list-item-inner .text {
   font-weight: lighter;
   letter-spacing: 0.1041666667vw;
   line-height: 5.2083333333vw;
-  overflow: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
