@@ -255,7 +255,7 @@ html {
             width: 100vw;
             height: 100vh;
             background: $backgraund-color;
-            overflow: auto;
+            overflow-y: scroll;
             -webkit-overflow-scrolling: touch; 
             z-index: 500;
             transition: $navi-btn-menu-transition;
@@ -682,7 +682,8 @@ html {
                             font-weight: lighter;
                             letter-spacing: vw(2);
                             line-height: vw(100);
-                            overflow: hidden;
+                            overflow-y: hidden;
+                            text-overflow: ellipsis;
                             display: -webkit-box;
                             -webkit-box-orient: vertical;
                             -webkit-line-clamp: 2;
