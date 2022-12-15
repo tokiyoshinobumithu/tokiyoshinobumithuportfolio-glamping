@@ -685,8 +685,8 @@ html {
                             overflow-y: hidden;
                             text-overflow: ellipsis;
                             display: -webkit-box;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 2;
+                            box-orient: vertical;
+                            line-clamp: 2;
                         }
                     }
                     .column {
