@@ -1,14 +1,13 @@
-$(function () {
-  setTimeout(function () {
-    $(".modal").css('bottom','5%');
-  },3000),
-  $(function (){
-    $(".modal-item-close").on('click',function (){
-      $(".modal").hide();
-    });
-  });
-});
-
+// $(function () {
+//   setTimeout(function () {
+//     $(".modal").css('bottom','5%');
+//   },3000),
+//   $(function (){
+//     $(".modal-item-close").on('click',function (){
+//       $(".modal").hide();
+//     });
+//   });
+// });
 $(function (){
   var block = $(".fadein, .fadein-rotate"),
       Window = $(window);
@@ -32,11 +31,31 @@ $(function () {
 });
 
 $(function () {
+  $(".feature-menu,.feature-navi-list,.feature-navi").on('mouseover',function (){
+    $(".feature-navi,.feature-menu").addClass('down')
+  })
+  $(function () {
+    $(".feature-navi").on('mouseout',function (){
+      $(".feature-navi,.feature-menu").removeClass('down')
+    });
+  });
+});
+
+$(function () {
   $(".topics-list").slick({
-    arrows:false,
+    arrows:true,
     infinite: false,
-    slidesToShow: 1.3,
+    slidesToShow: 3.6,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 786,
+        settings: {
+          arrows:false,
+          slidesToShow: 1.3,
+        },
+      },
+    ],
   });
 });
 $(function () {
@@ -76,12 +95,31 @@ $(function() {
     arrows: false,
     speed: 7000,
     autoplaySpeed: 0,
-    slidesToShow: 2.5,
+    slidesToShow: 5.2,
     slidesToScroll: 1,
     pauseOnFocus: false,
     pauseOnHover: false,
     pauseOnDotsHover: false,
     rtl:true,
+    responsive: [
+      {
+        breakpoint: 786,
+        settings: {
+          autoplay: true,
+          cssEase: 'linear',
+          infinite: true,
+          arrows: false,
+          speed: 7000,
+          autoplaySpeed: 0,
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+          pauseOnFocus: false,
+          pauseOnHover: false,
+          pauseOnDotsHover: false,
+          rtl:true,
+        },
+      },
+    ],
   });
 
   $('.bottom-slider').slick({
@@ -91,11 +129,29 @@ $(function() {
     arrows: false,
     speed: 7000,
     autoplaySpeed: 0,
-    slidesToShow: 2.5,
+    slidesToShow: 5.2,
     slidesToScroll: 1,
     pauseOnFocus: false,
     pauseOnHover: false,
     pauseOnDotsHover: false,
+    responsive: [
+      {
+        breakpoint: 786,
+        settings: {
+          autoplay: true,
+          cssEase: 'linear',
+          infinite: true,
+          arrows: false,
+          speed: 7000,
+          autoplaySpeed: 0,
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+          pauseOnFocus: false,
+          pauseOnHover: false,
+          pauseOnDotsHover: false,
+        },
+      },
+    ],
   });
 });
 
@@ -107,11 +163,29 @@ $(function () {
     arrows: false,
     speed: 2000,
     autoplaySpeed:0,
-    slidesToShow:3.5,
+    slidesToShow:7,
     slidesToScroll:1,
     pauseOnFocus:false,
     pauseOnHover:false,
     pauseOnDotsHover:false,
+    responsive: [
+      {
+        breakpoint: 786,
+        settings: {
+          autoplay:true,
+          cssEase:'linear',
+          infinite:true,
+          arrows: false,
+          speed: 2000,
+          autoplaySpeed:0,
+          slidesToShow:3.5,
+          slidesToScroll:1,
+          pauseOnFocus:false,
+          pauseOnHover:false,
+          pauseOnDotsHover:false,
+        },
+      },
+    ],
   });
 });
 
