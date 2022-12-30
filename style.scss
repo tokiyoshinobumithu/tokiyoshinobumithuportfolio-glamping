@@ -1039,7 +1039,6 @@ html {
             position: relative;
             padding-top: vw(230);
             margin-bottom: vw(700);
-            overflow-x: hidden;
             @include m.mq(pc01) {
                 display: flex;
                 padding-top: vw(150);
@@ -1051,7 +1050,6 @@ html {
             .fade_slide {
                 width: 100vw;
                 height: vw(2000);
-                overflow: hidden;
                 border-radius: 0 0 vw(300) vw(300);
 
                 @include m.mq(pc01) {
