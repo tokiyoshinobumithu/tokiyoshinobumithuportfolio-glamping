@@ -1581,7 +1581,7 @@ html {
 
                             @include m.mq(pc01) {
                                 margin-bottom: vw(10);
-                                font-size: vw(10);
+                                font-size: vw(20);
                             }
                         }
                         .title {
@@ -1605,8 +1605,11 @@ html {
                             display: -webkit-box;
                             box-orient: vertical;
                             -webkit-box-orient: vertical;
-                            line-clamp: 2;
+                            -moz-box-orient: vertical;
+                            -ms-box-orient: vertical;
                             -webkit-line-clamp: 2;
+                            -moz-line-clamp: 2;
+                            -ms-line-clamp: 2;
 
                             @include m.mq(pc01) {
                                 margin-bottom: vw(0);
@@ -1631,7 +1634,7 @@ html {
                             left: vw(-20);
                             width: vw(200);
                             height: vw(45);
-                            font-size: vw(10);
+                            font-size: vw(20);
                         }
 
                         &::before {
