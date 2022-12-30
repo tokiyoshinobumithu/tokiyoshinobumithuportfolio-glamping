@@ -1,777 +1,261 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="JP">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>グランピング</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
-  <link rel="stylesheet" href="./style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="./main.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ-02</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./text.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
 </head>
 <body>
-  <div class="spinner-box">
-    <div class="spinner-box-item">
-      <div class="spinner-box-item-big"></div>
-      <div class="spinner-box-item-small"></div>
-    </div>
-  </div>
-  <div class="modal">
-    <div class="modal-item">
-      <a href="">
-        <div class="modal-item-inner">
-          日帰りBBQ
-        </div>
-      </a>
-      <div class="modal-item-close">X</div>
-    </div>
-  </div>
-  <header class="header">
-    <div class="header-sp">
-      グランオレンジ宮崎日南
-    </div>
-    <nav class="header-navi">
-      <ul class="header-navi-list sabu">
-        <li class="header-navi-list-item">
-          <a href="">アクセス</a>
-        </li>
-        <li class="header-navi-list-item">
-          <a href="">よくある質問</a>
-        </li>
-      </ul>
-      <ul class="header-navi-list main">
-        <li class="header-navi-list-item">
-          <a href="">コンセプト</a>
-        </li>
-        <li class="header-navi-list-item slash">
-          /
-        </li>
-        <li class="header-navi-list-item feature-menu">
-          4つの体験
-        </li>
-        <li class="header-navi-list-item slash">
-          /
-        </li>
-        <li class="header-navi-list-item">
-          <a href="">すごし方</a>
-        </li>
-        <li class="header-navi-list-item slash">
-          /
-        </li>
-        <li class="header-navi-list-item">
-          <a href="">ギャラリー</a>
-        </li>
-        <li class="header-navi-list-item slash">
-          /
-        </li>
-        <li class="header-navi-list-item">
-          <a href="">コラム</a>
-        </li>
-        <li class="header-navi-list-item slash">
-          /
-        </li>
-        <li class="header-navi-list-item">
-          <a href="">料金・施設</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="logo">
-      <a href="">ロゴ</a>
-    </div>
-    <div class="header-reserve-btn">
-      <a href="">
-        RESERVE<br>
-        <span>予約する</span>
-      </a>
-    </div> 
-    <div class="navi-btn">
-      <div class="navi-btn-inner">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    <div class="navi-btn-menu">
-      <div class="navi-btn-menu-inner">
-        <nav class="navi-btn-menu-inner-navi">
-          <ul class="navi-btn-menu-inner-navi-list">
-            <li class="navi-btn-menu-inner-navi-list-item">
-              <a href="">
-                コンセプト<br>
-                <span class="lo">CONCEPT</span>
-              </a>
-            </li>
-            <li class="navi-btn-menu-inner-navi-list-item feature">
-                4つの体験<br>
-                <span class="lo">FEATURE</span>
-                <div class="feature-inner">
-                  <ul class="feature-inner-list">
-                    <li class="feature-inner-list-item">
-                      <a href="">食べる</a>
-                    </li>
-                    <li class="feature-inner-list-item">
-                      <a href="">あそぶ</a>
-                    </li>
-                    <li class="feature-inner-list-item">
-                      <a href="">泊まる</a>
-                    </li>
-                    <li class="feature-inner-list-item">
-                      <a href="">くつろぐ</a>
-                    </li>
-                  </ul>
+    <header class="header">
+        <h1 class="logo">
+            <a href="#">
+                Tokiyoshi<br>
+                Nobumithu<br>
+                Portfolio
+            </a>
+        </h1> 
+        <nav class="navi">
+            <ul class="navi-list">
+                <li class="navi-list-item">
+                    <a class="navi-list-item-a"   href="#about">About</a>
+                </li>
+                <li class="navi-list-item">
+                    <a class="navi-list-item-a"   href="#profile">Profile</a>
+                </li>
+                <li class="navi-list-item">
+                    <a class="navi-list-item-a"   href="#skill">Skill</a>
+                </li>
+                <li class="navi-list-item">
+                    <a class="navi-list-item-a"   href="#work">Work</a>
+                </li>
+                <li class="navi-list-item">
+                    <a class="navi-list-item-a"   href="#future">Future</a>
+                </li>
+                <li class="navi-list-item">
+                    <a class="navi-list-item-a"   href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main" >
+        <section  id="top" class="mv">
+            <div class="mv-images"></div>
+            <p class="mv-text">宮崎で育ち、<br>宮崎で生まれ、<br>宮崎に貢献していきたい。
+            </p>
+            <div class="list-btn">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h1 class="logo-responsive">
+                <a href="#">
+                    Tokiyoshi<br>
+                    Nobumithu<br>
+                    Portfolio
+                </a>
+            </h1> 
+        </section>
+        <section id="about" class="contents">
+            <h2 class="contents-title  fadein">About</h2>
+            <div class="contents-about fadein">
+                <img class="contents-about-images" src="images/about.webp" alt="後ろ姿の写真です。">
+                <div class="contents-about-inner">
+                    <span class="al">Nobumithu Tokiyoshi</span>
+                    <div class="jp">時吉 信充</div>
+                    <p class="birthday">1998/07/29  24歳</p>
+                    <p class="text">
+                        以前は食品製造業と小売業の掛け持ちをしておりました。その後、プログラミング学習を始めhtml、css、sass、jquery等の言語が扱えます。
+                    </p> 
+                    <p class="text">
+                        学習意欲が高く、勉強会に率先して参加したり、身に付けたい技術があれば自分から情報を集め、習得するように心がけています。
+                    </p>   
+                    <p class="text">
+
+                        趣味は読書と散歩です。知識を身につけることが好きですし、集中力にも自信があります。
+                    </p>
                 </div>
-            </li>
-            <li class="navi-btn-menu-inner-navi-list-item">
-              <a href="">
-                すごし方<br>
-                <span class="lo">HOWTO</span>
-              </a>
-            </li>
-            <li class="navi-btn-menu-inner-navi-list-item">
-              <a href="">
-                ギャラリー<br>
-                <span class="lo">GALLERY</span>
-              </a>
-            </li>
-            <li class="navi-btn-menu-inner-navi-list-item">
-              <a href="">
-                コラム<br>
-                <span class="lo">COLUMN</span>
-              </a>
-            </li>
-            <li class="navi-btn-menu-inner-navi-list-item">
-              <a href="">
-                料金・施設<br>
-                <span class="lo">PRICE & FACLITY</span>
-              </a>
-            </li>
-          </ul>
-          <ul class="access-question-list"> 
-            <li class="access-question-list-item">
-              <a href="">アクセス</a>
-            </li>
-            <li class="access-question-list-item">
-              <a href="">よくある質問</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="instagram">
-          <div class="instagram-logo"></div>
-          <p class="instagram-title">OFFICAL INSTAGRAM</p>
-        </div>
-        <div class="navi-btn-menu-inner-reserve-btn all-reserve-btn">
-          <a href="">
-            <img src="" alt="">
-            <div class="all-reserve-btn-inner">
-              <div class="all-reserve-btn-inner-lo">RESERVE</div>
-              <span class="all-reserve-btn-inner-jp">予約する</span>
             </div>
-            <span class="arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-  <nav class="feature-navi">
-    <div class="triangle"></div>
-    <ul class="feature-navi-list">
-      <li class="feature-navi-list-item">
-        <a href="">
-          EAT/食べる
-          <span class="arrow">→</span>
-        </a>
-      </li>
-      <li class="feature-navi-list-item">
-        <a href="">
-          ENJOY/あそぶ
-          <span class="arrow">→</span>
-        </a>
-      </li>
-      <li class="feature-navi-list-item">
-        <a href="">
-          STAY/泊まる
-          <span class="arrow">→</span>
-        </a>
-      </li>
-      <li class="feature-navi-list-item">
-        <a href="">
-          RELAX/くつろぐ
-          <span class="arrow">→</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <main class="main">
-    <div class="main-inner">
-      <div class="reserve-btn-fixed">
-        <a href="">
-          RESERVE<br>
-          <span>予約する</span>
-        </a>
-      </div>  
-      <section class="mv">
-        <div class="mv-images fade_slide">
-          <div class="mv-images-item slide" style="background-image: url(images/mv01.webp)"></div>
-          <div class="mv-images-item slide" style="background-image: url(images/mv02.webp)"></div>
-          <div class="mv-images-item slide" style="background-image: url(images/mv03.webp)"></div>
-          <div class="mv-images-item slide" style="background-image: url(images/mv04.webp)"></div>
-        </div>
-        <div class="mv-text">
-          <p class="mv-text-item">叶えてくれる⼿ぶらキャンプ。</p>
-          <p class="mv-text-item">「⼿軽にアウトドアを満喫したい」を</p>
-        </div>
-        <div class="mv-logo">
-          <span class="mv-logo-top">LIFE STYLE GLAMPING</span>
-          <div class="mv-logo-bottom">
-            <P class="mv-logo-bottom-item glam">G</P>
-            <P class="mv-logo-bottom-item glam">L</P>
-            <P class="mv-logo-bottom-item glam">A</P>
-            <P class="mv-logo-bottom-item glam">M</P>
-            <P class="mv-logo-bottom-item oreng">O</P>
-            <P class="mv-logo-bottom-item oreng">R</P>
-            <P class="mv-logo-bottom-item oreng">E</P>
-            <P class="mv-logo-bottom-item oreng">N</P>
-            <P class="mv-logo-bottom-item oreng">G</P>
-          </div>
-        </div>
-        <div class="mv-pc01-right">
-          <div class="instagram">
-            <div class="instagram-logo"></div>
-            <p class="instagram-title">INSTAGRAM</p>
-          </div>
-          <div class="scroll-down">
-            <p class="scroll-down-item">
-              SCROLL DOWN
-            </p>
-            <div class="scroll-down-arrow">
-              <img src="images/page_down-arrow.png" alt="">
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="topics">
-        <div class="topics-title">
-          <h2 class="section-title-lo">TOPICS</h2>
-          <span class="section-title-jp">トピックス</span>
-        </div>
-        <ul class="topics-list">
-          <li class="topics-list-item">
-            <img src="images/section-topics.webp" alt="">
-            <div class="topics-list-item-inner">
-              <time class="date">2022.12.03</time>
-              <div class="title">冬を楽しもう！冬のグランピングのおすすめ</div>
-              <p class="text">
-                12月に入り、一気に寒くなりましたね。冬到来です!
-                寒い冬は、お家でぬくぬくしたい方も多いと思いますが、冬だからこそ味わえる体験や美味しさがあるのも”冬グランピング”の魅力です。今回は「寒い冬にグランピングって、できるの？」という方におすすめしたい、過ごし方をご紹介します！
-              </p>
-            </div>
-            <div class="column">
-              コラム
-            </div>
-          </li>
-          <li class="topics-list-item">
-            <img src="images/section-topics.webp" alt="">
-            <div class="topics-list-item-inner">
-              <time class="date">2022.12.03</time>
-              <div class="title">冬を楽しもう！冬のグランピングのおすすめ</div>
-              <p class="text">
-                12月に入り、一気に寒くなりましたね。冬到来です!
-                寒い冬は、お家でぬくぬくしたい方も多いと思いますが、冬だからこそ味わえる体験や美味しさがあるのも”冬グランピング”の魅力です。今回は「寒い冬にグランピングって、できるの？」という方におすすめしたい、過ごし方をご紹介します！
-              </p>
-            </div>
-            <div class="column">
-              コラム
-            </div>
-          </li>
-          <li class="topics-list-item">
-            <img src="images/section-topics.webp" alt="">
-            <div class="topics-list-item-inner">
-              <time class="date">2022.12.03</time>
-              <div class="title">冬を楽しもう！冬のグランピングのおすすめ</div>
-              <p class="text">
-                12月に入り、一気に寒くなりましたね。冬到来です!
-                寒い冬は、お家でぬくぬくしたい方も多いと思いますが、冬だからこそ味わえる体験や美味しさがあるのも”冬グランピング”の魅力です。今回は「寒い冬にグランピングって、できるの？」という方におすすめしたい、過ごし方をご紹介します！
-              </p>
-            </div>
-            <div class="column">
-              コラム
-            </div>
-          </li>
-          <li class="topics-list-item">
-            <img src="images/section-topics.webp" alt="">
-            <div class="topics-list-item-inner">
-              <time class="date">2022.12.03</time>
-              <div class="title">冬を楽しもう！冬のグランピングのおすすめ</div>
-              <p class="text">
-                12月に入り、一気に寒くなりましたね。冬到来です!
-                寒い冬は、お家でぬくぬくしたい方も多いと思いますが、冬だからこそ味わえる体験や美味しさがあるのも”冬グランピング”の魅力です。今回は「寒い冬にグランピングって、できるの？」という方におすすめしたい、過ごし方をご紹介します！
-              </p>
-            </div>
-            <div class="column">
-              コラム
-            </div>
-          </li>
-          <li class="topics-list-item">
-            <img src="images/section-topics.webp" alt="">
-            <div class="topics-list-item-inner">
-              <time class="date">2022.12.03</time>
-              <div class="title">冬を楽しもう！冬のグランピングのおすすめ</div>
-              <p class="text">
-                12月に入り、一気に寒くなりましたね。冬到来です!
-                寒い冬は、お家でぬくぬくしたい方も多いと思いますが、冬だからこそ味わえる体験や美味しさがあるのも”冬グランピング”の魅力です。今回は「寒い冬にグランピングって、できるの？」という方におすすめしたい、過ごし方をご紹介します！
-              </p>
-            </div>
-            <div class="column">
-              コラム
-            </div>
-          </li>
-        </ul>
-        <div class="topics-btn fadein">
-          <div class="news read-btn">
-            <a href="">お知らせ一覧
-              <span class="arrow">→</span>
-            </a>
-          </div>
-          <div class="news read-btn">
-            <a href="">コラム一覧
-              <span class="arrow">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
-      <section class="concept">
-        <h2 class="section-title-lo fadein">CONCEPT
-          <span class="section-title-jp">コンセプト</span>
-        </h2>
-        <div class="concept-inner">
-          <div class="concept-inner-contents-title fadein">
-            <h3 class="concept-inner-contents-title-jp">
-              休みは、もっと、<br>
-              自由でいい。
-            </h3>
-            <span class="concept-inner-contents-title-lo">GLAM ORENG CONCEPT</span>
-          </div>
-          <div class="concept-inner-contents-text">
-            <p class="concept-inner-contents-text-item fadein">
-                アウトドアなのに、家にいるより、<br class="break">
-                ゆったりできる。<br>
-                手ぶらでいいから、いろんな体験の<br class="break">
-                手ざわりが、<br class="break-sp"> こころを満たしていく。
-            </p>
-            <p class="concept-inner-contents-text-item fadein">
-                休日の楽しみ方を<br class="break">
-                もっと自由にデザインできるように、<br>
-                ライフスタイルグランピング<br class="break">
-                「グランアップル神戸三田」は
-                生まれました。            
-            </p>
-            <p class="concept-inner-contents-text-item fadein">
-                外で味わうBBQ。<br class="break">
-                焚き火を眺めるひととき。<br>
-                心地よく朝を迎えられるテント。<br>
-                からだもこころも軽くなる天然温泉。<br>
-                1万冊の本に、がんばらないジム。
-            </p>
-            <p class="concept-inner-contents-text-item fadein">
-                りんごの木に鳥たちがとまって<br class="break">
-                思い思いに羽を休めるように。<br>
-                だれかの日常にとって、<br class="break">
-                かけがえのない非日常になれたらと、<br>
-                私たちは願っています。
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="feature">
-        <h2 class="section-title-lo fadein">FEATURE
-          <span class="section-title-jp">4つの体験</span>
-        </h2>
-        <div class="feature-contents">
-          <img class="fadein-rotate" src="images/section-feature-eat.webp" alt="">
-          <div class="feature-contents-inner">
-            <div class="feature-contents-inner-title fadein">
-              <div class="feature-contents-inner-title-number">
-                <span>No</span>1
-              </div>
-              <div class="feature-contents-inner-title-item">
-                <div class="feature-contents-inner-title-item-lo">EAT</div>
-                <div class="feature-contents-inner-title-item-jp">"食べる"</div>
-              </div>
-            </div>
-            <p class="feature-contents-inner-text fadein">
-              外の空気、いつもと違う時間の流れの中で味わ<br>
-              える非日常の料理で、五感のすべてを満たして<br>
-              いただきたい。腕利きの料理人たちが食材を厳<br>
-              選し、見た目の美しさにもこだわりながら、写<br>
-              真にも、記憶にも残せる料理を提供していく。
-            </p>
-            <div class="read-btn fadein">
-              <a href="">詳しく見る
-                <span class="arrow">→</span>
-              </a>  
-            </div>
-          </div>
-        </div>
-        <div class="feature-contents">
-          <img class="fadein-rotate" src="images/section-feature-play.webp" alt="">
-          <div class="feature-contents-inner">
-            <div class="feature-contents-inner-title fadein">
-              <div class="feature-contents-inner-title-number">
-                <span>No</span>2
-              </div>
-              <div class="feature-contents-inner-title-item">
-                <div class="feature-contents-inner-title-item-lo">PLAY</div>
-                <div class="feature-contents-inner-title-item-jp">"遊ぶ"</div>
-              </div>
-            </div>
-            <p class="feature-contents-inner-text fadein">
-              キャンプの準備や片づけはしなくてOK。大人も<br>
-              子どもも安心して、ゆっくりあそべる環境で<br>
-              す。焚き火や外の空気を楽しんだり、神戸三田<br>
-              プレミアム・アウトレットや観光農園に出かけ<br>
-              たり、休日の楽しみがここから広がります。
-            </p>
-            <div class="read-btn fadein">
-              <a href="">詳しく見る
-                <span class="arrow">→</span>
-              </a>  
-            </div>
-          </div>
-        </div>
-        <div class="feature-contents">
-          <img class="fadein-rotate" src="images/section-feature-stay.webp" alt="">
-          <div class="feature-contents-inner">
-            <div class="feature-contents-inner-title fadein">
-              <div class="feature-contents-inner-title-number">
-                <span>No</span>3
-              </div>
-              <div class="feature-contents-inner-title-item">
-                <div class="feature-contents-inner-title-item-lo">STAY</div>
-                <div class="feature-contents-inner-title-item-jp">"泊まる"</div>
-              </div>
-            </div>
-            <p class="feature-contents-inner-text fadein">
-              居心地のいいテントで朝まで快適な眠り。せっ<br>
-              かくの休日、からだも、こころも、ゆったりと<br>
-              休めていただけるように。 ベッドから内装、空<br>
-              調、トイレや水まわりまで、一つひとつこだわ<br>
-              って、グランピングならではの清潔感と居心地<br>
-              のよさ、朝までつづく快適な眠りをめざしまし
-              た。
-            </p>
-            <div class="read-btn fadein">
-              <a href="">詳しく見る
-                <span class="arrow">→</span>
-              </a>  
-            </div>
-          </div>
-        </div>
-        <div class="feature-contents">
-          <img class="fadein-rotate" src="images/section-feature-relax.webp" alt="">
-          <div class="feature-contents-inner">
-            <div class="feature-contents-inner-title fadein">
-              <div class="feature-contents-inner-title-number">
-                <span>No</span>4
-              </div>
-              <div class="feature-contents-inner-title-item">
-                <div class="feature-contents-inner-title-item-lo">RELAX</div>
-                <div class="feature-contents-inner-title-item-jp">"くつろぐ"</div>
-              </div>
-            </div>
-            <p class="feature-contents-inner-text fadein">
-              グランアップルと同じ敷地のなかにある「三田<br>
-              天然温泉 寿ノ湯」。宿泊者の方はチェックイ<br>
-              ン〜チェックアウトまで何度でも寿ノ湯をご利<br>
-              用いただけます。グランピング×天然温泉とい<br>
-              う贅沢な組み合わせが、 いっそう深い休息とく<br>
-              つろぎ体験をかなえていきます。
-            </p>
-            <div class="read-btn fadein">
-              <a href="">詳しく見る
-                <span class="arrow">→</span>
-              </a>  
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="enjoy">
-        <h2 class="section-title-lo fadein">ENJOY
-          <span class="section-title-jp">すごし方</span>
-        </h2>
-        <div class="enjoy-images couple fadein">
-          <p>COUPLE</p>
-        </div>
-        <div class="enjoy-images family fadein">
-          <p>FAMILY</p>
-        </div>
-        <div class="enjoy-images joshikai fadein">
-          <p>JOSHIKAI</p>
-        </div>
-        <div class="enjoy-contents">
-          <h4 class="enjoy-contents-title" fadein>
-            ”アウトドアでありながら<br>
-            安心して楽しめる”
-          </h4>
-          <p class="enjoy-contents-text fadein">
-            「グランアップル神戸三田」は、「手軽にアウ<br>
-            トドアを満喫したい」という願いをかなえてく<br>
-            れるラグジュアリーな手ぶらキャンプ。<br>
-            五感を満たす美味しい料理、アウトドアであり<br>
-            ながら安心して子どもも大人も楽しめる開放的<br>
-            な空間。
-          </p>
-          <div class="enjoy-contents-text fadein pc01">
-            <p class="enjoy-contents-text-item">
-              「グランアップル神戸三田」は、「手軽にアウトドアを満,<br>
-              喫したい」という願いをかなえてくれるラグジュアリーな,<br>
-              手ぶらキャンプ。
-            </p>
-            <p class="enjoy-contents-text-item">
-              五感を満たす美味しい料理、アウトドアでありながら安心,<br>
-              して子どもも大人も楽しめる開放的な空間。
-            </p>
-          </div>
-          <div class="read-btn fadein">
-            <a href="">詳しく見る
-              <span class="arrow">→</span>
-            </a>  
-          </div>
-        </div>
-      </section>
-      <section class="facility">
-        <h2 class="section-title-lo fadein">FACILITY
-          <span class="section-title-jp">施設紹介</span>
-        </h2>
-        <div class="facility-contents">
-          <img src="images/section-facility.webp" alt="">
-          <div class="facility-contents-box fadein">
-            <div class="facility-contents-box-inner">
-              <h4 class="facility-contents-box-inner-title fadein">
-                ”いつもの休日を<br class="break">
-                ちょっと<br class="break-sp">格上げする<br class="break">
-                時間と空間“
-              </h4>
-              <p class="facility-contents-box-inner-text fadein">
-                テントの中で過ごすのもグランピング<br>
-                の楽しみです。ホテルさながらの設備<br>
-                が整う心ときめくラグジュアリーなテ<br>
-                ント体験。シモンズ製ベットや空調設<br>
-                備も完備し、ゆっくりと眠ることがで<br>
-                きます。
-              </p>
-              <p class="facility-contents-box-inner-text pc01 fadein">
-                テントの中で過ごすのもグランピングの楽しみです。,<br>
-                ホテルさながらの設備が整う心ときめくラグジュアリ<br>
-                ーなテント体験。シモンズ製ベットや空調設備も完備<br>
-                し、ゆっくりと眠ることができます。
-              </p>
-              <div class="read-btn fadein">
-                <a href="">詳しく見る
-                  <span class="arrow">→</span>
-                </a>  
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="gallery">
-        <h2 class="section-title-lo fadein">GALLERY
-          <span class="section-title-jp">ギャラリー</span>
-        </h2>
-        <ul class="gallery-slider-list top-slider" dir="rtl">
-          <li class="gallery-slider-list-item images-01"></li>
-          <li class="gallery-slider-list-item images-02"></li>
-          <li class="gallery-slider-list-item images-03"></li>
-          <li class="gallery-slider-list-item images-04"></li>
-          <li class="gallery-slider-list-item images-05"></li>
-          <li class="gallery-slider-list-item images-06"></li>
-          <li class="gallery-slider-list-item images-07"></li>
-          <li class="gallery-slider-list-item images-08"></li>
-          <li class="gallery-slider-list-item images-09"></li>
-        </ul>
-        <ul class="gallery-slider-list bottom-slider">
-          <li class="gallery-slider-list-item images-09"></li>
-          <li class="gallery-slider-list-item images-08"></li>
-          <li class="gallery-slider-list-item images-07"></li>
-          <li class="gallery-slider-list-item images-06"></li>
-          <li class="gallery-slider-list-item images-05"></li>
-          <li class="gallery-slider-list-item images-04"></li>
-          <li class="gallery-slider-list-item images-03"></li>
-          <li class="gallery-slider-list-item images-02"></li>
-          <li class="gallery-slider-list-item images-01"></li>
-        </ul>
-        <div class="read-btn fadein">
-          <a href="">詳しく見る
-            <span class="arrow">→</span>
-          </a>  
-        </div>
-      </section>
-      <section class="access">
-        <h2 class="section-title-lo fadein">ACCESS
-          <span class="section-title-jp">アクセス</span>
-        </h2>
-        <div class="access-contents-address fadein">
-          <div class="access-contents-address-inner">
-            <address><span>ADDRESS</span>宮崎県日南市0-0</address>
-            <address><span>HOUR</span>Cheack IN 15:00 OUT 10:00</address>
-            <address><span>TEL</span>0120-000-000</address>
-            <address><span>HOLIDAY</span>水曜日/祝日の水曜日は営業</address>
-          </div>
-        </div>
-        <div class="access-contents-sales">
-          <div class="access-contents-sales-directions fadein">
-            <dl>
-            <dt>［電車でお越しの方］</dt>
-              <dd>神鉄公園都市線「フラワータウン駅」から徒歩13分</dd>
-            </dl>
-            <dl>
-              <dt>［お車でお越しの方］</dt>
-              <dd>・中国自動車道「神戸三田IC」から車で約5分</dd>
-              <dd>・「大阪・神戸」から車で約40分</dd>
-            </dl>
-          </div>
-          <dl class="access-contents-sales-time fadein">
-            <dt>［提携施設(三田天然温泉 寿ノ湯)］</dt>
-            <dd><b>温泉&サウナ</b></dd>
-            <dd>10:00～23:00（最終受付 22:00）</dd>
-            <dd><b>BOOK & リラックス</b></dd>
-            <dd>10:00〜22:00（最終受付 21:30）</dd>
-          </dl>
-        </div>
-        <div class="access-contents-map fadein">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3386.513349179891!2d131.43175305050394!3d31.91981738114723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3538b75a58d44243%3A0x7faa6fa26edf1196!2z44Kk44Oz44K_44O844Kv44Ot44K5!5e0!3m2!1sja!2sjp!4v1668775056249!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </section>
-    </div>
-  </main>
-  <footer class="footer">
-    <div class="logo fadein">ロゴ</div>
-    <div class="footer-contents fadein">
-      <section class="footer-contents-inner fadein">
-        <div class="footer-contents-inner-reserve-btn all-reserve-btn">
-          <a href="">
-            <img src="" alt="">
-            <div class="all-reserve-btn-inner">
-              <div class="all-reserve-btn-inner-lo">RESERVE</div>
-              <span class="all-reserve-btn-inner-jp">予約する</span>
-            </div>
-            <span class="arrow">→</span>
-          </a>
-        </div>
-        <div class="footer-contents-inner-hot_spring">
-          <a href="">
-            <img src="images/section-feature-relax.webp" alt="">
-            <div class="footer-contents-inner-hot_spring-text">
-              <p class="footer-contents-inner-hot_spring-text-item">
-                <span>新型ライフスタイル温泉</span><br>
-                三田天然温泉 寿ノ湯
-              </p>
-            </div>
-          </a>
-        </div>
-      </section>
-      <section class="footer-contents-inner-address">
-        <div class="logo fadein">ロゴ</div>
-        <div class="instagram fadein">
-          <div class="instagram-logo"></div>
-          <p class="instagram-title">OFFICAL INSTAGRAM</p>
-        </div>
-        <p class="tel">TEL:0123-000-000</p>
-        <address class="address">
-          〒000-0000 宮崎県宮崎市0-0<br>
-          Cheack 15:00 OUT 10:00
-        </address>
-        <small>&copy;2021 glampple.tokiyoshi-no.com</small>
-      </section>
-      <section class="footer-contents-inner-center">
-        <nav class="footer-contents-inner-center-navi">
-          <ul class="footer-contents-inner-center-navi-list">
-            <li class="footer-contents-inner-center-navi-list-item">
-              <a href="">
-                コンセプト
-                <span>CONCEPT</span>
-              </a>
-            </li>
-            <li class="footer-contents-inner-center-navi-list-item">
-              <a href="">
-                4つの体験
-                <span>FEATURE</span>
-              </a>
-            </li>
-            <li class="footer-contents-inner-center-navi-list-item-navi">
-              <ul class="footer-contents-inner-center-navi-list-item-navi-list">
-                <li class="footer-contents-inner-center-navi-list-item-navi-list-item">
-                  <a href="">食べる</a>
+        </section>
+        <section id="profile" class="contents">
+            <h2 class="contents-title fadein">Profile</h2>
+            <ul class="profile-list">
+                <li class="profile-list-item fadein">1998.07 : 宮崎県日南に誕生</li>
+                <li class="profile-list-item fadein">2017.04 : 宮崎調理製菓専門学校(現 : マナビヤ宮崎アカデミー) 入学</li>
+                <li class="profile-list-item fadein">2019.03 : 宮崎調理製菓専門学校(現 : マナビヤ宮崎アカデミー) 卒業</li>
+                <li class="profile-list-item fadein">2020.04 : スーパーセンタートライアル日南店(生鮮食品 : 惣菜部) 入職</li>
+                <li class="profile-list-item fadein">2020.06 : 株式会社セリア日南店 入職</li>
+                <li class="profile-list-item fadein">2021.10 : スーパーセンタートライアル日南店(生鮮食品 : 惣菜部) 退職</li>
+                <li class="profile-list-item fadein">2021.11 : 株式会社セリア日南店 退職</li>
+                <li class="profile-list-item fadein">
+                    2022.06.24 : 宮崎キャリアデザインスクール DTP・Webデザイン養成課 入校
                 </li>
-                <li class="footer-contents-inner-center-navi-list-item-navi-list-item">
-                  <a href="">あそぶ</a>
+                <li class="profile-list-item fadein">
+                    2022.12.24 : 宮崎キャリアデザインスクール DTP・Webデザイン養成課 修了
                 </li>
-                <li class="footer-contents-inner-center-navi-list-item-navi-list-item">
-                  <a href="">泊まる</a>
-                </li>
-                <li class="footer-contents-inner-center-navi-list-item-navi-list-item">
-                  <a href="">くつろぐ</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="footer-contents-inner-center-navi-list">
-            <li class="footer-contents-inner-center-navi-list-item">
-              <a href="">
-                すごし方
-                <span>ENJOY</span>
-              </a>
-            </li>
-            <li class="footer-contents-inner-center-navi-list-item">
-              <a href="">
-                ギャラリー
-                <span>GALLERY</span>
-              </a>
-            </li>
-            <li class="footer-contents-inner-center-navi-list-item">
-              <a href="">
-                コラム
-                <span>COLUMN</span>
-              </a>
-            </li>
-            <li class="footer-contents-inner-center-navi-list-item">
-              <a href="">
-                料金・施設
-                <span>PRICE & FACILITY</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="instagram">
-          <div class="instagram-logo"></div>
-          <p class="instagram-title">OFFICAL INSTAGRAM</p>
-        </div>
-      </section>
-    </div>
-    <div class="page-top-btn">
-      <div class="page-top-btn-inner">
-        <img src="images/pagetop.png" alt="">
-        ↑
-      </div>
-    </div>
-    <div class="footer-slider-text">
-      <div class="footer-slider-text-item">G</div>
-      <div class="footer-slider-text-item">R</div>
-      <div class="footer-slider-text-item">A</div>
-      <div class="footer-slider-text-item">M</div>
-      <div class="footer-slider-text-item"></div>
-      <div class="footer-slider-text-item">O</div>
-      <div class="footer-slider-text-item">R</div>
-      <div class="footer-slider-text-item">E</div>
-      <div class="footer-slider-text-item">N</div>
-      <div class="footer-slider-text-item">G</div>
-      <div class="footer-slider-text-item"></div>
-    </div>
-    </var>
-  </footer>
+            </ul>
+        </section>
+        <section id="skill" class="contents">
+            <h2 class="contents-title fadein">Skill</h2>
+            <div class="contents-skill fadein">
+                <div class="images-html5-css3">
+                    <img src="images/html5.png" alt="html5アイコン">
+                    <img src="images/css3.png" alt="css3アイコン">
+                </div>
+                <div class="contents-skill-inner">
+                    <h3 class="title">HTML5/CSS3</h3>
+                    <p class="text">
+                        Webサイトを一から作成可能ですし、レスポンシブ対応も実装可能です。CSSを使用したスライドやフェードインと言ったアニメーションも実装可能です。イディターはVisual Stadio codeを使用しています。
+                    </p>
+                </div>
+            </div>
+            <div class="contents-skill fadein">
+                <img src="images/sass.png" alt="sassアイコン">
+                <div class="contents-skill-inner">
+                    <h3 class="title">Sass</h3>
+                    <p class="text">
+                        関数を用いた作業量の短縮や、作業効率の向上等が可能です。
+                    </p>
+                </div>
+            </div>
+            <div class="contents-skill fadein">
+                <img src="images/jquey.png" alt="jqueryアイコン" >
+                <div class="contents-skill-inner">
+                    <h3 class="title">jquery</h3>
+                    <p class="text">
+                        スライドやフェイドイン、CSSアニメションと組み合わせることで、動きのあるサイトの作成が可能です。
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="work" class="contents">
+            <h2 class="contents-title fadein">Work</h2>
+            <div class="contents-work fadein">
+                <img class="contents-work-images" src="images/section-work-hospital.webp" alt="病院サイトの画像">
+                <div class="contents-work-item">
+                    <span class="tag01">自主制作</span>
+                    <p class="period">
+                        制作期間 : 45時間
+                    </p>
+                </div>
+                <h3 class="title">病院系サイトのトップページ</h3>
+                <span class="point">Point</span>
+                <p class="text">
+                   グローバルナビのホバーダウンメニューは単純な作りですが、フェードイン・アウトの仕様と、お知らせのドロップダウンメニューも、仕様がわからず苦戦しました。
+                </p>
+                <p class="web-url">
+                    自主サイト :<a target="_blank" href="https://tokiyoshinobumithu.github.io/tokiyoshinobumithuportfolio-hospital/"> https://tokiyoshinobumithu.github.io/tokiyoshinobumithuportfolio-hospital/</a>
+                </p>
+                <p class="web-url">
+                    コード一覧 :<a target="_blank" href="https://github.com/tokiyoshinobumithu/tokiyoshinobumithuportfolio-hospital"> https://github.com/tokiyoshinobumithu/tokiyoshinobumithuportfolio</a>
+                </p>
+                <p class="web-url">
+                    参考サイト :<a  target="_blank"  href="https://kawasaki-ichouka.com/"> https://kawasaki-ichouka.com/</a><br>
+                </p>
+            </div>
+            <div class="contents-work fadein">
+                <img class="contents-work-images" src="images/section-work-portfolio.webp" alt="ポートフォリオサイトの画像">
+                <div class="contents-work-item">
+                    <span class="tag01">自主制作</span>
+                    <p class="period">
+                        制作期間 : 30時間
+                    </p>
+                </div>
+                <h3 class="title">ポートフォリオサイト</h3>
+                <span class="point">Point</span>
+                <p class="text">
+                   全体的にシンプルなデザインにしました。メインビジュアルの背景化で、「background-attachment: fixed;」はスマホで非対応だっため、別の形で再現することに苦戦しました。
+                </p>
+                <p class="web-url">
+                    自主サイト :<a target="_blank" href="https://tokiyoshinobumithu.github.io/tokiyoshinobumithuportfolio/"> https://tokiyoshinobumithu.github.io/tokiyoshinobumithuportfolio/</a>
+                </p>
+                <p class="web-url">
+                    コード一覧 :<a target="_blank" href="https://github.com/tokiyoshinobumithu/tokiyoshinobumithuportfolio"> https://github.com/tokiyoshinobumithu/tokiyoshinobumithuportfolio</a>
+                </p>
+            </div>
+            <div class="contents-work fadein">
+                <img class="contents-work-images" src="images/section-work-kindergarten.webp" alt="幼稚園サイトの画像">
+                <div class="contents-work-item">
+                    <span class="tag02">課題制作</span>
+                    <p class="period">
+                        制作期間 : 50時間
+                    </p>
+                </div>
+                <h3 class="title">幼稚園系サイトのトップページ</h3>
+                <span class="point">Point</span>
+                <p class="text">
+                   元のサイトを参考にデザインから変えました。レスポンスの事を考慮して作成することが難しく、
+                   文字の大きさ、園一覧の見せ方等、苦戦しました。
+                </p>
+                <p class="web-url">
+                    自主サイト :<a target="_blank" href="https://tokiyoshinobumithu.github.io/tokiyoshinobumithuportfolio_kindergarten/"> https://tokiyoshinobumithu.github.io/tokiyoshinobumithuportfolio_kindergarten/</a>
+                </p>
+                <p class="web-url">
+                    コード一覧 :<a target="_blank" href="https://github.com/tokiyoshinobumithu/tokiyoshinobumithuportfolio_kindergarten"> https://github.com/tokiyoshinobumithu/tokiyoshinobumithuportfolio_kindergarten</a>
+                </p>
+                <p class="web-url">
+                    参考サイト :<a  target="_blank"  href="https://www.m-syakyo.or.jp/hoiku/"> https://www.m-syakyo.or.jp/hoiku/</a><br>
+                </p>
+            </div>
+            <div class="contents-work fadein">
+                <img class="contents-work-images" src="images/work-gramping.webp" alt="ポートフォリオサイトの画像">
+                <div class="contents-work-item">
+                    <span class="tag01">自主制作</span>
+                    <p class="period">
+                        制作期間 : 45時間
+                    </p>
+                </div>
+                <h3 class="title">キャンプ場系サイトのトップページ</h3>
+                <span class="point">Point</span>
+                <p class="text">
+                   レスポンシブ対応時のデザインの変化や、ロード画面からのメインビジュアルのアニメーション等の再現に苦戦しました。
+                </p>
+                <p class="web-url">
+                    自主サイト :<a target="_blank" href=" https://tokiyoshinobumithu.github.io/tokiyoshinobumithuportfolio-glamping/">  https://tokiyoshinobumithu.github.io/tokiyoshinobumithuportfolio-glamping/</a>
+                </p>
+                <p class="web-url">
+                    コード一覧 :<a target="_blank" href="https://github.com/tokiyoshinobumithu/tokiyoshinobumithuportfolio-glamping"> https://github.com/tokiyoshinobumithu/tokiyoshinobumithuportfolio-glamping</a>
+                </p>
+                <p class="web-url">
+                    参考サイト :<a  target="_blank"  href="https://glamapple.kotobuki-yu.com/"> https://glamapple.kotobuki-yu.com/</a><br>
+                </p>
+            </div>
+        </section>
+        <section id="future" class="contents">
+            <h2 class="contents-title fadein">Future</h2>
+            <div class="contents-title-inner fadein">
+                <div class="contents-title-inner-filter">
+                    <h3 class="title">
+                        コーディングをする<br>
+                        自分が一番好き。
+                    </h3>
+                    <p class="text">
+                        初めは何もわからず、何もできない日々。謎の単語を訳もわからずただ打ち込んでいました。
+                    </p>
+                    <p class="text">
+                        続けていくうちに手に馴染み始め、最近は自分の思うようになり、様々なことを習得し、プログラミングという果てしない存在を楽しめる様になりました。
+                    </p>
+                    <p class="text">
+                        将来的には、フロントエンドエンジニアとして、楽しいを広げていきたいです。そのためにも、Web業界に一歩でも多く踏み出す準備ができています。
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contents">
+            <h2 class="contents-title  fadein">Contact</h2>
+            <p class="contents-text fadein">御用がありましたら気軽にご連絡ください。</p>
+            <p class="mail fadein">G-mail :<a href="mailto:address"> tokiyoshinobumithu@gmail.com</a></p>
+            <p class="mail fadein">Twitter :<a href="https://twitter.com/answer0041">https://twitter.com/answer0041</a></p>
+        </section>
+    </main>
+    <footer class="footer">
+        <small class="copyright">
+            &copy;Tokiyoshi Nobumithu Portfolio
+        </small>
+    </footer>
 </body>
 </html>
