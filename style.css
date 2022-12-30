@@ -1808,12 +1808,12 @@ html body .main .topics-list-item-inner {
   margin: 6.7708333333vw auto 0;
   width: 85%;
   background: #fff;
+  border-radius: 0 0 2.6041666667vw 2.6041666667vw;
 }
 @media screen and (min-width : 768px) {
   html body .main .topics-list-item-inner {
     margin: 0 auto;
     padding: 2.0833333333vw 7.5% 0;
-    border-radius: 0 0 2.6041666667vw 2.6041666667vw;
   }
 }
 html body .main .topics-list-item-inner .date {
