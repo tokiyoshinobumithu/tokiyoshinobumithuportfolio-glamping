@@ -1,6 +1,8 @@
 @use "sabu" as m;
 
 html {
+    scroll-behavior: smooth;
+
    $bease-color: #fff;
    $main-color: #ffc53f;
    $backgraund-color: #ffc698;
@@ -8,15 +10,21 @@ html {
    $sabu-color02: #ff9c4c;
    $sabu-color03: #2a1500;
    $opacity-item01: 0.8;
+   $search_engine : -webkit-, -moz-, -ms-; 
 
-   scroll-behavior: smooth;
+   @mixin transform01 {
+    transform: translate(-50%, -50%);
+    @each $transform01 in $search_engine {
+        #{$transform01}transform: translate(-50%, -50%);
+    }
+   }
 
-   $read-btn-transition: all .3s ease;
-   @mixin read-btn-transition-item {
-       -webkit-transition: $read-btn-transition;
-       -moz-transition: $read-btn-transition;
-       -ms-transition: $read-btn-transition;
-       transition: $read-btn-transition;
+   $arrow-transition: all .3s ease;
+   @mixin arrow-transition-item {
+    transition: $arrow-transition;
+    @each $text in $search_engine {
+        #{$text}transition:  $arrow-transition;
+    }
    }
 
    body {
@@ -24,6 +32,7 @@ html {
     font-weight: bold;
     font-family: "Gill Sans", sans-serif;
     z-index: 10;
+
     @function vw($size, $viewport:1920) {
         $rate: 100 /$viewport;
         @return $rate * $size * 1vw;
@@ -90,14 +99,24 @@ html {
         }
     }
     .fadein {
-        $fadein-transform: translateY(vw(100));
         $fadein-transition: all .3s linear;
-        transform: $fadein-transform;
         transition: $fadein-transition;
+        @each $text in $search_engine {
+            #{$text}transition: $fadein-transition;
+        }
+        $fadein-transform: translateY(vw(100));
+        transform: $fadein-transform;
+        @each $text in $search_engine {
+            #{$text}transform: $fadein-transform;
+        }
         opacity: 0;
 
         &.show {
-            transform: translateY(0);
+            $fadein_show-transform: translateY(0);
+            transform: $fadein_show-transform;
+            @each $text in $search_engine {
+                #{$text}transform: $fadein_show-transform;
+            }
             opacity: 1;
         }
     }
@@ -112,7 +131,7 @@ html {
             color: $bease-color;
             background: $main-color;
             border-radius: vw(125);
-            @include read-btn-transition-item;
+            @include arrow-transition-item;
             
             @include m.mq(pc01) {
                 margin: 0;
@@ -120,12 +139,12 @@ html {
                 height: vw(90);
                 font-size: vw(25);
                 border-radius: vw(50);
-                @include read-btn-transition-item;
+                @include arrow-transition-item;
                 &:hover {
                     filter: brightness(1.1);
                     .arrow {
                         right: 3%;
-                        @include read-btn-transition-item;
+                        @include arrow-transition-item;
                     }
                 }
             }
@@ -136,11 +155,10 @@ html {
                right: 5%;
                font-size: vw(60);
                color: $bease-color;
-               transform: translate(-50%, -50%);
-
+               @include transform01;
                @include m.mq(pc01) {
                 font-size: vw(25);
-                @include read-btn-transition-item;
+                @include arrow-transition-item;
                }
             }
          }
@@ -159,14 +177,14 @@ html {
             @include m.mq(pc01) {
                 width: vw(400);
                 height: vw(130);
-                @include read-btn-transition-item;
+                @include arrow-transition-item;
 
                 &:hover {
                     opacity: $opacity-item01;
 
                     .arrow {
                         right: 3%;
-                        @include read-btn-transition-item;
+                        @include arrow-transition-item;
                     }
                 }
             }
@@ -194,11 +212,11 @@ html {
                 top: 50%;
                 right: 5%;
                 font-size: vw(100);
-                transform: translate(-50%, -50%);
+                @include transform01;
 
                 @include m.mq(pc01) {
                     font-size: vw(40);
-                    @include read-btn-transition-item;
+                    @include arrow-transition-item;
                 }
             }
         }
@@ -214,8 +232,12 @@ html {
             background: $bease-color;
 
             @include m.mq(pc01) {
-                width: vw(70);
-                height: vw(70);
+                width: vw(60);
+                height: vw(60);
+            }
+            @include m.mq(pc02) {
+                width: vw(40);
+                height: vw(40);
             }
         }
         &-title {
@@ -224,27 +246,129 @@ html {
             line-height: vw(0);
         }
     }
+    .spinner-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include display001;
+        width: 100vw;
+        height: 100vh;
+        background: $backgraund-color;
+        z-index: 2000;
+
+        &-item {
+            position: relative;
+            @include display001;
+            width: vw(150);
+            height: vw(150);
+            z-index: 3000;
+            .spinner-box-item-big,
+            .spinner-box-item-small {
+                position: absolute;
+                border-radius: 50%;
+                opacity: 0;
+            }
+            .spinner-box-item-big {
+                top: 34%;
+                left: 35%;
+                width: vw(150);
+                height: vw(150);
+                border-top: solid vw(5)  transparent;
+                border-right: solid vw(5) transparent;
+                border-bottom: solid vw(5) transparent;
+                border-left: solid vw(5) $bease-color;
+                $spinner-box-item-big-anime: spinner-box-item-big-anime 8s cubic-bezier(.47,-0.01,0,1.51);
+                animation: $spinner-box-item-big-anime;
+                @each $text in $search_engine {
+                    #{$text}animation: $spinner-box-item-big-anime;
+                }
+            }
+            $spinner-box-item-anime-transform0: rotate(0);
+            @mixin spinner-box-item-anime-transform0-item {
+                transform: $spinner-box-item-anime-transform0;
+                @each $text in $search_engine {
+                    #{$text}transition: $spinner-box-item-anime-transform0;
+                }
+            }
+            @keyframes spinner-box-item-big-anime {
+                0% {
+                    transform: rotate(0);
+                    opacity: 1;
+                }
+                100% {
+                    border-top: solid vw(5)  $bease-color;
+                    border-right: solid vw(5) transparent;
+                    border-bottom: solid vw(5) transparent;
+                    border-left: solid vw(5) $bease-color;
+                    transform: rotate(1080deg);
+                    opacity: 1;
+                }
+            }
+            .spinner-box-item-small {
+                top: 50%;
+                left: 50%;
+                width: vw(100);
+                height: vw(100);
+                border-top: solid vw(3)  transparent;
+                border-right: solid vw(3) $bease-color;
+                border-bottom: solid vw(3) transparent;
+                border-left: solid vw(3) transparent;
+                animation: spinner-box-item-small-anime 8s cubic-bezier(.47,-0.01,0,1.51);
+            }
+            @keyframes spinner-box-item-small-anime {
+                0% {
+                    transform: rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    border-top: solid vw(3)  transparent;
+                    border-right: solid vw(3) $bease-color;
+                    border-bottom: solid vw(3) $bease-color;
+                    border-left: solid vw(3) transparent;
+                    transform: rotate(1080deg);
+                    opacity: 1;
+                }
+            }
+        }
+
+
+    }
     .modal {
         position: fixed;
         left: 50%;
         bottom: -100%;
         z-index: 1000;
         transition: all 1.2s ease;
-        transform: translate(-50%, 0);
-       
+        $modal-transform : translate(-50%, 0);
+        transform: $modal-transform ;
+        @each $text in $search_engine {
+            #{$text}transform: $modal-transform;
+        }
+
+        @include m.mq(pc02) {
+            left: auto;
+            right: 2%;
+            transform: translate(0, 0);
+            $modal-transform-pc : translate(0, 0);
+            transform: $modal-transform-pc ;
+            @each $text in $search_engine {
+                #{$text}transform: $modal-transform-pc;
+            }
+        }
+
         &-item {
             position: relative;
             a {
                 @include display001;
                 background: url(images/section-gallery09.webp) center no-repeat;
                 background-size: cover;
-                width: vw(1200);
-                height: vw(800);
+                width: 300px;
+                height: 220px;
                 .modal-item-inner {
                     @include display001;
-                    width: vw(500);
-                    height: vw(500);
-                    font-size: vw(80);
+                    width: 150px;
+                    height: 150px;
+                    font-size: 20px;
                     color: $bease-color;
                     background: $main-color;
                     border-radius: 50%;
@@ -255,9 +379,9 @@ html {
                 position: absolute;
                 top: -5%;
                 right: -5%;
-                width: vw(100);
-                height: vw(100);
-                font-size: vw(80);
+                width: 30px;
+                height: 30px;
+                font-size: 20px;
                 font-weight: lighter;
                 color: $bease-color;
                 background: #262626;
@@ -273,6 +397,10 @@ html {
 
         @include m.mq(pc01) {
             height:vw(150);
+            justify-content: flex-end;
+        }
+        @include m.mq(pc02) {
+            height:90px;
             justify-content: flex-end;
         }
         background: $bease-color;
@@ -294,6 +422,9 @@ html {
                 display: block;
                 margin-right: vw(420);
             }
+            @include m.mq(pc02) {
+                margin-right: 250px;
+            }
             &-list {
                 display: flex;
                 justify-content: flex-end;
@@ -310,25 +441,42 @@ html {
                 &.sabu {
                     margin-bottom: vw(15);
                     gap: vw(50);
+                    @include m.mq(pc02) {
+                        margin-bottom: 10px;
+                        gap: 20px;
+                    }
                     .header-navi-list-item {
                         a {
-                            font-size: vw(10);
+                            font-size: vw(15);        
+                            @include m.mq(pc02) {
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
                 &.main {
                     align-items: center;
                     gap: vw(30);
+
+                    @include m.mq(pc02) {
+                        gap: 20px;
+                    }
                     .header-navi-list-item {
                         display: flex;
                         align-items: center;
-
                         a {
                             font-size: vw(23);
+                            @include m.mq(pc02) {
+                                font-size: 16px;
+                            }
                         }
                         &.feature-menu {
                             font-size: vw(23);
                             color: $sabu-color01;
+
+                            @include m.mq(pc02) {
+                                font-size: 14px;
+                            }
                             &.down {
                                 color: $main-color;
                             }
@@ -337,7 +485,16 @@ html {
                                 display: block;
                                 margin-left: vw(10);
                                 font-size: vw(25);
-                                transform: rotate(90deg);
+                                $feature-menu_after-transform: rotate(90deg);
+                                transform: $feature-menu_after-transform;
+                                @each $text in $search_engine {
+                                    #{$text}transform: $feature-menu_after-transform;
+                                }
+
+                                @include m.mq(pc02) {
+                                    margin-left: 5px;
+                                    font-size: 14px;
+                                }
                             }
                         }
                         &.slash {
@@ -371,16 +528,21 @@ html {
                 height: vw(280);
                 border-radius: 0 0 vw(100) 0;
             }
+            @include m.mq(pc02) {
+                width: 200px;
+                height: 200px;
+                border-radius: 0 0 50px 0;
+            }
         }
         .header-reserve-btn {
             right: 0px;
             a {
                 $header-reserve-btn-trasition: all .4s ease;
                 @mixin  header-reserve-btn-trasition-item {
-                    -webkit-transition:  $header-reserve-btn-trasition;
-                    -moz-transition:  $header-reserve-btn-trasition;
-                    -ms-transition:  $header-reserve-btn-trasition;
-                    transition:  $header-reserve-btn-trasition;
+                    transition:$header-reserve-btn-trasition;
+                    @each $text in $search_engine {
+                        #{$text}transition: $header-reserve-btn-trasition;
+                    }
                 }
                 visibility: hidden;
                 position: relative;
@@ -396,8 +558,19 @@ html {
                 background: $sabu-color03;
                 border-radius: 0 0 0 vw(50);
                 @include header-reserve-btn-trasition-item;
+
+                @include m.mq(pc02) {
+                    width: 180px;
+                    height: 110px;
+                    font-size: 18px;
+                    border-radius: 0 0 0 25px;
+                }
                 span {
                     font-size: vw(30);
+
+                    @include m.mq(pc02) {
+                        font-size: 16px;
+                    }
                 }
                 &:hover {
                     background: $main-color;
@@ -424,38 +597,58 @@ html {
             
             &-inner {
                 $navi-btn-trasition: all .2s ease;
+                @mixin navi-btn-trasition-item {
+                    transition: $navi-btn-trasition;
+                    @each $text in $search_engine {
+                        #{$text}transition: $navi-btn-trasition;
+                    }
+                }
                 display: flex;
                 justify-content: space-between;
                 flex-direction: column;
                 width: vw(180);
                 height: vw(100);
-                transition: $navi-btn-trasition;
+               @include navi-btn-trasition-item;
 
                 div {
                     width: vw(180);
                     height: vw(10);
                     background: $bease-color;
-                    transition: $navi-btn-trasition;
+                   @include navi-btn-trasition-item;
                 }
                 &.open {
-                    transition: $navi-btn-trasition;
+                   @include navi-btn-trasition-item;
                     div:nth-child(1) {
-                        transform: translateY(vw(45)) rotate(45deg);
-                        transition: $navi-btn-trasition;
+                        $div_open-transform01: translateY(vw(45)) rotate(45deg);
+                        transform: $div_open-transform01;
+                        @each $text in $search_engine {
+                            #{$text}transform: $div_open-transform01;
+                        }
+                       @include navi-btn-trasition-item;
                     }
                     div:nth-child(2) {
                         width: 0;
-                        transition: $navi-btn-trasition;
+                       @include navi-btn-trasition-item;
                     }
                     div:nth-child(3) {
-                        transform: translateY(vw(-45)) rotate(-45deg);
-                        transition: $navi-btn-trasition;
+                        $div_open-transform02: translateY(vw(-45)) rotate(-45deg);
+                        transform: $div_open-transform02;
+                        @each $text in $search_engine {
+                            #{$text}transform: $div_open-transform02;
+                        }
+                       @include navi-btn-trasition-item;
                     }
                 }
             }
         }
         .navi-btn-menu {
             $navi-btn-menu-transition: all .3s ease;
+            @mixin navi-btn-menu-transition-item {
+                transition: $navi-btn-menu-transition;
+                @each $text in $search_engine {
+                    #{$text}transition: $navi-btn-menu-transition;
+                }
+            }
             position: fixed;
             display: flex;
             align-items: center;
@@ -467,12 +660,14 @@ html {
             background: $backgraund-color;
             overflow-y: scroll;
             -webkit-overflow-scrolling: touch; 
+            -moz-overflow-scrolling: touch; 
+            -ms-overflow-scrolling: touch; 
             z-index: 500;
-            transition: $navi-btn-menu-transition;
+            @include navi-btn-menu-transition-item;
 
             &.open {
                 right: 0;
-                transition: $navi-btn-menu-transition;
+                @include navi-btn-menu-transition-item;
             }
             
             &-inner {
@@ -511,11 +706,23 @@ html {
                             
                         }
                         .feature {
-                            $feature-transition: all .2s ease;
+                            $feature-transition: all .2s ease; 
+                            @mixin feature-transition-item {
+                                transition: $feature-transition;
+                                @each $text in $search_engine {
+                                    #{$text}transition: $feature-transition;
+                                }
+                            }
                             $feature-margin-bottom-transition:all .5s ease;
+                            @mixin feature-margin-bottom-transition-item {
+                                transition: $feature-margin-bottom-transition;
+                                @each $text in $search_engine {
+                                    #{$text}transition: $feature-margin-bottom-transition;
+                                }
+                            }
+                            @include feature-margin-bottom-transition-item;
                             position: relative;
                             margin-bottom: 0;
-                            transition: $feature-margin-bottom-transition;
                             cursor: pointer;
                             &::before,
                             &::after {
@@ -527,14 +734,14 @@ html {
                                 height: vw(80);
                                 background: $bease-color;
                                 border-radius: 50%;
-                                transition: $feature-transition;
+                                @include feature-transition-item;
                             }
                             &::before {
                                 content: "∨";
                                 @include display001;
                                 font-size: vw(30);
                                 color: $main-color;
-                                transition: $feature-transition;
+                                @include feature-transition-item;
                                 opacity: 1;
                             }
                             &::after {
@@ -542,19 +749,19 @@ html {
                                 @include display001;
                                 font-size: vw(30);
                                 color: $main-color;
-                                transition: $feature-transition;
+                                @include feature-transition-item;
                                 opacity: 0;
                             }
                             &.active {
                                 margin-bottom: vw(500);
-                                transition: $feature-margin-bottom-transition;
+                                @include feature-margin-bottom-transition-item;
                                 &::before {
-                                    transition: $feature-transition;
+                                    @include feature-transition-item;
                                     opacity: 0;
                                 }
                                 &::after {
                                     @include display001;
-                                    transition: $feature-transition;
+                                    @include feature-transition-item;
                                     opacity: 1;
                                 }
                             }
@@ -592,19 +799,35 @@ html {
                                 }
                                 &.active {
                                     visibility: visible;
-                                    animation: feature-down-anime 1s ease .5s both;
+                                    $feature_active-animation: feature-down-anime 1s ease .5s both;
+                                    animation: $feature_active-animation;
+                                    @each $text in $search_engine {
+                                        #{$text}animation: $feature_active-animation;
+                                    }
                                     opacity: 1;
+
+                                    $feature-down-anime-transform01: scale(1);
+                                    @mixin  feature-down-anime-transform01-item {
+                                        transform: $feature-down-anime-transform01;
+                                        @each $text in $search_engine {
+                                            #{$text}transform: $feature-down-anime-transform01;
+                                        }
+                                    }
                                     @keyframes  feature-down-anime{
                                         0% {
-                                            transform: scale(1);
+                                            @include feature-down-anime-transform01-item;
                                             opacity: 0;
                                         }
                                         50% {
-                                            transform: scale(1.1);
+                                            $feature-down-anime-transform02: scale(1.1);
+                                             transform: $feature-down-anime-transform02;
+                                            @each $text in $search_engine {
+                                                #{$text}transform: $feature-down-anime-transform02;
+                                            }
                                             opacity: 1;
                                         }
                                         100% {
-                                            transform: scale(1);
+                                            @include feature-down-anime-transform01-item;
                                             opacity: 1;
                                         }
                                     }
@@ -638,7 +861,7 @@ html {
     }
     .feature-navi {
         position: fixed;
-        top:-100%;
+        top: -100%;
         display: none;
         justify-content: flex-end;
         align-items: center;
@@ -647,7 +870,18 @@ html {
         height: vw(200);
         background: $backgraund-color;
         z-index: 50;
-        transition: all .4s ease;
+        $feature-navi-transition:  all .4s ease;
+        @mixin feature-navi-transition-item {
+            transition: $feature-navi-transition;
+            @each $text in $search_engine {
+                #{$text}transition: $feature-navi-transition;
+            }
+        }
+        @include feature-navi-transition-item;
+        @include m.mq(pc02) {
+            padding-top: 100px;
+            height: 120px;
+        }
 
         .triangle {
             position: fixed;
@@ -659,16 +893,38 @@ html {
             border-left: solid vw(30) transparent;
             border-bottom: solid vw(30) transparent;
             border-right: solid vw(30) transparent;
-            transition: all .3s ease;
+            @include feature-navi-transition-item;
             z-index: 50;
+
+            @include m.mq(pc02) {
+                left: auto;
+                right: 730px;
+                width: 2px;
+                height: 15px;
+                border-top: solid 15px $bease-color;
+                border-left: solid 15px transparent;
+                border-bottom: solid 15px transparent;
+                border-right: solid 15px transparent;
+            }
         }
         &.down {
+            $feature-navi_down-transition:  all .6s ease;
+            @mixin feature-navi_down-transition-item {
+                transition: $feature-navi_down-transition;
+                @each $text in $search_engine {
+                    #{$text}transition: $feature-navi_down-transition;
+                }
+            }
             top:0%;
-            transition: all .5s ease;
+            @include feature-navi_down-transition-item;
             
             .triangle {
                 top:vw(150);
-                transition: all .5s ease;
+                @include feature-navi_down-transition-item;
+
+                @include m.mq(pc02) {
+                    top: 90px;
+                }
             }
         }
 
@@ -690,17 +946,17 @@ html {
                 height: vw(85);
                 background: $bease-color;
                 border-radius: 0 vw(10) vw(10) vw(10);
-                @include read-btn-transition-item;
+                @include arrow-transition-item;
 
                 &:hover {
                     a {
                         color: $main-color;
-                        @include read-btn-transition-item;
+                        @include arrow-transition-item;
 
                         .arrow {
                             right: 3%;
                             color: $main-color;
-                            @include read-btn-transition-item;
+                            @include arrow-transition-item;
                         }
                     }
                 }
@@ -708,14 +964,18 @@ html {
                  a {
                     color: $sabu-color01;
                     font-size: vw(25);
-                    @include read-btn-transition-item;
+                    @include arrow-transition-item;
 
                     .arrow {
                         position: absolute;
                         top: 50%;
                         right: 5%;
-                        transform: translate(0%, -50%);
-                        @include read-btn-transition-item;
+                        $feature-navi-list-item-arrow-transform: translate(0%, -50%);
+                        transform: $feature-navi-list-item-arrow-transform;
+                        @each $text in $search_engine {
+                            #{$text}transform: $feature-navi-list-item-arrow-transform;
+                        }
+                        @include arrow-transition-item;
                     }
                  }
             }
@@ -767,8 +1027,11 @@ html {
             margin-bottom: vw(700);
             @include m.mq(pc01) {
                 display: flex;
-                padding-top: vw(180);
+                padding-top: vw(150);
                 margin-bottom: vw(0);
+            }
+            @include m.mq(pc02) {
+                padding-top: 90px;
             }
             .fade_slide {
                 width: 100vw;
@@ -796,25 +1059,25 @@ html {
                 }
                 .add-animation {
                     $add-animation-item: slide-zoomup-Anime 10s linear 0s normal both;
-                    -webkit-animation:$add-animation-item;
-                    -moz-animation:$add-animation-item;
-                    -ms-animation:$add-animation-item;
                     animation:$add-animation-item;
+                    @each $text in $search_engine {
+                        #{$text}animation:$add-animation-item;
+                    }
                 }
                 @keyframes slide-zoomup-Anime {
                     0% {
                         $slide-zoomup-transform0:scale(1);
-                        -webkit-transform: $slide-zoomup-transform0;
-                        -moz-transform: $slide-zoomup-transform0;
-                        -ms-transform: $slide-zoomup-transform0;
                         transform: $slide-zoomup-transform0;
+                        @each $text in $search_engine {
+                            #{$text}transform: $slide-zoomup-transform0;
+                        }
                     }
                     100% {
                         $slide-zoomup-transform100:scale(1.2);
-                        -webkit-transform: $slide-zoomup-transform100;
-                        -moz-transform: $slide-zoomup-transform100;
-                        -ms-transform: $slide-zoomup-transform100;
                         transform: $slide-zoomup-transform100;
+                        @each $text in $search_engine {
+                            #{$text}transform: $slide-zoomup-transform100;
+                        }
                     }
                 }
             }
@@ -829,6 +1092,10 @@ html {
                     top: vw(300);
                     right: 13%;
                 }
+                @include m.mq(pc02) {
+                    top: vw(200);
+                    right: 13%;
+                }
                 &-item {
                     @include display001;
                     margin: 0  0 0 vw(30);
@@ -840,15 +1107,29 @@ html {
                     border-radius: vw(30);
                     opacity: 0;
                     transform: translateY(vw(-30));
-                    animation: text-right-anime .8s ease .5s both;
-                    @keyframes text-right-anime {
-                        0% {
-                            transform: translateY(vw(-30));
-                            opacity: 0;
+                    &.move {
+                        $mv-text-animation: text-right-anime .8s ease .5s both;
+                        animation: $mv-text-animation;
+                        @each $text in $search_engine {
+                            #{$text}animation:  $mv-text-animation;
                         }
-                        100% {
-                            transform: translateY(vw(0));
-                            opacity: 1;
+                        @keyframes text-right-anime {
+                            0% {
+                                $text-right-anime-transform0: translateY(vw(-30));
+                                transform: $text-right-anime-transform0;
+                                @each $text in $search_engine {
+                                    #{$text}transform: $text-right-anime-transform0;
+                                }
+                                opacity: 0;
+                            }
+                            100% {
+                                $text-right-anime-transform100: translateY(vw(0));
+                                transform: $text-right-anime-transform100;
+                                @each $text in $search_engine {
+                                    #{$text}transform: $text-right-anime-transform100;
+                                }
+                                opacity: 1;
+                            }
                         }
                     }
 
@@ -858,7 +1139,7 @@ html {
                         font-size: vw(25);
                         border-radius: vw(15);
                     }
-                    
+     
                     &:nth-child(1) {
                         padding-top: 10px;
                         animation-delay: 1.4s;
@@ -872,7 +1153,11 @@ html {
                 position: absolute;
                 bottom: 0%;
                 left: 50%;
-                transform: translate(-50%, 55%);
+                $mv-logo-transform: translate(-50%, 55%);
+                transform: $mv-logo-transform;
+                @each $text in $search_engine {
+                    #{$text}transform: $mv-logo-transform;
+                }
                 display: flex;
                 align-items: center;
                 flex-direction: column;
@@ -883,33 +1168,53 @@ html {
                     bottom: vw(150);
                     width: 90vw;
                     align-items: flex-start;
-                    transform: translate(-50%, 0%);
+                    $mv-logo-transform_pc01: translate(-50%, 0%);
+                    transform: $mv-logo-transform_pc01;
+                    @each $text in $search_engine {
+                        #{$text}transform: $mv-logo-transform_pc01;
+                    }
                 }
-
                 &-top {
                     font-size: vw(100);
                     font-weight: 600;
                     letter-spacing: vw(30);
                     transform: translateX(0);
                     opacity: 0;
-                    animation: logo-top-Anime .8s ease .5s both; 
-
                     @include m.mq(pc01) {
                         font-size: vw(80);
                     }
-
-                    @keyframes logo-top-Anime {
-                        0% {
-                            transform: translateX(50vw);
-                            opacity: 0;
+                    
+                    &.move {
+                        $mv-logo-top-animation: logo-top-Anime 1s ease  both;
+                        animation: $mv-logo-top-animation; 
+                        @each $text in $search_engine {
+                            #{$text}animation: $mv-logo-top-animation;
                         }
-                        50% {
-                            transform: translateX(-10vw);
-                            opacity: .5;
-                        }
-                        100% {
-                            transform: translateX(0vw);
-                            opacity: 1;
+                        @keyframes logo-top-Anime {
+                            0% {
+                                $logo-top-Anime-transform0: translateX(50vw);
+                                transform: $logo-top-Anime-transform0;
+                                @each $text in $search_engine {
+                                    #{$text}transform: $logo-top-Anime-transform0;
+                                }
+                                opacity: 0;
+                            }
+                            50% {
+                                $logo-top-Anime-transform50: translateX(-10vw);
+                                transform: $logo-top-Anime-transform50;
+                                @each $text in $search_engine {
+                                    #{$text}transform: $logo-top-Anime-transform50;
+                                }
+                                opacity: .5;
+                            }
+                            100% {
+                                $logo-top-Anime-transform100: translateX(0vw);
+                                transform: $logo-top-Anime-transform100;
+                                @each $text in $search_engine {
+                                    #{$text}transform: $logo-top-Anime-transform100;
+                                }
+                                opacity: 1;
+                            }
                         }
                     }
                 }    
@@ -922,46 +1227,68 @@ html {
                     @include m.mq(pc01) {
                         margin-top: vw(80);
                         width: 93vw;
-                        transform: translateX(vw(-30));
-                        
+                        $logo-bottom-Anime-transform: translateX(vw(-30));
+                            transform: $logo-bottom-Anime-transform;
+                            @each $text in $search_engine {
+                                #{$text}transform: $logo-bottom-Anime-transform;
+                            }
                     }
-
                     &-item {
                         font-size: vw(480);
                         font-weight: 600;
                         transform: translateX(0);
                         opacity: 0;
-                        animation: logo-bottom-Anime .8s ease 1s both;    
-                        
-                        @include m.mq(pc01) {
-                            font-size: vw(280);
+                        $mv-logo-bottom-item-animation: logo-bottom-Anime .8s ease 1s both; 
 
-                            &:nth-child(4) {
-                                margin-right: vw(100);
-                            } 
-                        }
-                        
-                        @for $logo-nth from 1 through 9 {
-                            &:nth-child(#{$logo-nth * 1}) {
-                                animation-delay: 1 + $logo-nth * .1 + s;
+                        &.move {
+                            animation: $mv-logo-bottom-item-animation;    
+                            @each $text in $search_engine {
+                                #{$text}animation: $mv-logo-bottom-item-animation;
+                            }
+                            @include m.mq(pc01) {
+                                font-size: vw(280);
+    
+                                &:nth-child(4) {
+                                    margin-right: vw(100);
+                                } 
+                            }
+        
+                            @for $logo-nth from 1 through 9 {
+                                &:nth-child(#{$logo-nth * 1}) {
+                                    animation-delay: 1 + $logo-nth * .1 + s;
+                                    @each $text in $search_engine {
+                                        #{$text}animation-delay:  1 + $logo-nth * .1 + s;
+                                    }
+                                }
+                            }
+                            @keyframes logo-bottom-Anime {
+                                0% {
+                                    $logo-bottom-Anime-transform0: translateX(0vw) scale(0);
+                                    transform: $logo-bottom-Anime-transform0;
+                                    @each $text in $search_engine {
+                                        #{$text}animation: $logo-bottom-Anime-transform0;
+                                    }
+                                    opacity: 0;
+                                }
+                                50% {
+                                    $logo-bottom-Anime-transform50: translateX(-10vw) scale(1.2) rotate(-30deg);
+                                    transform: $logo-bottom-Anime-transform50;
+                                    @each $text in $search_engine {
+                                        #{$text}animation: $logo-bottom-Anime-transform50;
+                                    }
+                                    opacity: 1;
+                                }
+                                100% {
+                                    $logo-bottom-Anime-transform100: ranslateX(0vw) scale(1) rotate(0deg);
+                                    transform: $logo-bottom-Anime-transform100;
+                                    @each $text in $search_engine {
+                                        #{$text}animation: $logo-bottom-Anime-transform100;
+                                    }
+                                    opacity: 1;
+                                }
                             }
                         }
 
-                        @keyframes logo-bottom-Anime {
-                            0% {
-                                transform: translateX(0vw) scale(0);
-                                opacity: 0;
-                            }
-                            50% {
-                                transform: translateX(-10vw) scale(1.2) rotate(-30deg);
-                                opacity: 1;
-                            }
-                            100% {
-                                transform: translateX(0vw) scale(1) rotate(0deg);
-                                opacity: 1;
-                            }
-                            
-                        }
                         &.glam {
                             width: (90vw/4);
                             margin-bottom: vw(250);
@@ -985,8 +1312,16 @@ html {
                 }
             }
             &-pc01-right {
-                margin-top: vw(120);
-                width: 8vw;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                margin: vw(120) auto 0;
+                @include m.mq(pc01) {
+                    display: flex;
+                }
+                @include m.mq(pc02) {
+                    margin-top: 50px;
+                }
                 .instagram {
                     margin: 0 auto vw(50);
                     writing-mode: vertical-lr;
@@ -999,33 +1334,73 @@ html {
                 .scroll-down {
                     position: relative;
                     margin: 0 auto;
-                    font-size: vw(.1);
                     font-weight: lighter;
                     letter-spacing: vw(2);
 
                     &-item {
                         margin: 0 auto;
+                        font-size: vw(10);
                         writing-mode: vertical-rl;
+
+                        @include m.mq(pc02) {
+                            font-size: 10px;
+                        }
                     }
                     
                     &-arrow {
-                        height: vw(120);
-                        overflow: hidden;
                         margin-top: vw(30);
+                        height: vw(70);
+                        overflow: hidden;
+
+                        @include m.mq(pc02) {
+                            margin-top: 20px;
+                            height: 50px;
+                            overflow: hidden;
+                        }
                         img {
                             display: block;
                             margin: 0 auto;
                             width: auto;
-                           height: vw(110);
-                           animation: page-down-anime 2.2s ease-in-out infinite;
+                            height: vw(70);
+                            $arrow-img-animation: page-down-anime 2.2s ease-in-out infinite;
+                            animation: $arrow-img-animation;
+                            @each $text in $search_engine {
+                                #{$text}animation: $arrow-img-animation;
+                            }
+
+                           @include m.mq(pc02) {
+                                height: 50px;
+                            }
                         }
 
                         @keyframes page-down-anime  {
                             0% {
-                                transform: translateY(vw(-120));
+                                $page-down-anime-transform0: translateY(vw(-70));
+                                transform: $page-down-anime-transform0;
+                                @each $text in $search_engine {
+                                    #{$text}transform: $page-down-anime-transform0;
+                                }
+                                @include m.mq(pc02) {
+                                    $page-down-anime-transform0: translateY(-50px);
+                                    transform: $page-down-anime-transform0;
+                                    @each $text in $search_engine {
+                                        #{$text}transform: $page-down-anime-transform0;
+                                    }
+                                }
                             }
                             100% {
-                                transform: translateY(vw(120));
+                                $page-down-anime-transform100: translateY(vw(70));
+                                transform: $page-down-anime-transform100;
+                                @each $text in $search_engine {
+                                    #{$text}transform: $page-down-anime-transform100;
+                                }
+                                @include m.mq(pc02) {
+                                    $page-down-anime-transform100: translateY(50px);
+                                    transform: $page-down-anime-transform100;
+                                    @each $text in $search_engine {
+                                        #{$text}transform: $page-down-anime-transform100;
+                                    }
+                                }
                             }
                         }
                     }
@@ -1034,7 +1409,7 @@ html {
         }
         .section-title-lo {
             @include display001;
-            margin: 0 0 vw(20);
+            flex-direction: column;
             padding-top: vw(300);
             font-size: vw(180);
             letter-spacing: vw(10);
@@ -1044,16 +1419,16 @@ html {
                 font-size: vw(80);
                 letter-spacing: vw(5);
             }
-        }
-        .section-title-jp {
-            @include display001;
-            margin-bottom: vw(500);
-            font-size: vw(80);
-            letter-spacing: vw(10);
 
-            @include m.mq(pc01) {
-                font-size: vw(35);
-                margin-bottom: vw(200);
+            .section-title-jp {
+                margin: vw(20) auto vw(500);
+                font-size: vw(80);
+                letter-spacing: vw(10);
+    
+                @include m.mq(pc01) {
+                    font-size: vw(35);
+                    margin-bottom: vw(200);
+                }
             }
         }
         .topics {
@@ -1138,10 +1513,10 @@ html {
                 &-item {
                     $topics-list-item-transition: all .3s ease;
                     @mixin topics-list-item-transition-item {
-                        -webkit-transition: $topics-list-item-transition;
-                        -moz-transition: $topics-list-item-transition;
-                        -ms-transition: $topics-list-item-transition;
                         transition: $topics-list-item-transition;
+                        @each $text in $search_engine {
+                            #{$text}transition: $topics-list-item-transition;
+                        }
                     }
                     position: relative;
                     margin:0 vw(130) 0 vw(40);
@@ -1159,13 +1534,17 @@ html {
                         &:hover {
                             @include topics-list-item-transition-item;
                             $topics-list-item-transform:translateY(vw(-10));
-                            -webkit-transform: $topics-list-item-transform;
-                            -moz-transform: $topics-list-item-transform;
-                            -ms-transform: $topics-list-item-transform;
                             transform: $topics-list-item-transform;
+                            @each $text in $search_engine {
+                                #{$text}transform: $topics-list-item-transform;
+                            }
 
                             img {
-                                filter: brightness(110%);
+                                $topics-list-item-img-filter: brightness(110%);
+                                filter: $topics-list-item-img-filter;
+                                @each $text in $search_engine {
+                                    #{$text}filter: $topics-list-item-img-filter;
+                                }
                             }
                         }
                     }
@@ -1178,6 +1557,7 @@ html {
                         @include m.mq(pc01) {
                             height: vw(325);
                             border-radius: 0 vw(100) 0 0;
+                            @include topics-list-item-transition-item;
                         }
                     }
                     &-inner {
@@ -1412,23 +1792,18 @@ html {
                 }
               }
                 .fadein-rotate {
-                    $fadein-rotate-transform: scale(0.5) rotate(45deg);
-                    $fadein-rotate-transition: all 0.8s ease;
-                     margin-bottom: vw(150);
-                     width: 80vw;
-                     height: 80vw;
-                     object-fit: cover;
-                     border: solid vw(20) $sabu-color02;
-                     border-radius: 0 vw(200) vw(200) vw(200);
-                     opacity: 0;
-                    -webkit-transform: $fadein-rotate-transform;
-                    -moz-transform: $fadein-rotate-transform;
-                    -ms-transform: $fadein-rotate-transform;
+                    margin-bottom: vw(150);
+                    width: 80vw;
+                    height: 80vw;
+                    object-fit: cover;
+                    border: solid vw(20) $sabu-color02;
+                    border-radius: 0 vw(200) vw(200) vw(200);
+                    opacity: 0;
+                    $fadein-rotate-transform: scale(0.7) rotate(45deg);
                     transform: $fadein-rotate-transform;
-                    -webkit-transition: $fadein-rotate-transition;
-                    -moz-transition: $fadein-rotate-transition;
-                    -ms-transition: $fadein-rotate-transition;
-                    transition: $fadein-rotate-transition;
+                    @each $text in $search_engine {
+                        #{$text}transform:  $fadein-rotate-transform;
+                    }
 
                     @include m.mq(pc01) {
                         width: 50vw;
@@ -1438,11 +1813,16 @@ html {
                     }
                      &.show {
                         &.show {
-                            -webkit-transition: $fadein-rotate-transition;
-                            -moz-transition: $fadein-rotate-transition;
-                            -ms-transition: $fadein-rotate-transition;
+                            $fadein-rotate-transition: all .8s ease;
                             transition: $fadein-rotate-transition;
-                            transform: scale(1) rotate(0deg);
+                            @each $text in $search_engine {
+                                #{$text}transition: $fadein-rotate-transition;
+                            }
+                            $fadein-rotate_show-transform:  scale(1) rotate(0deg);
+                            transform: $fadein-rotate_show-transform;
+                            @each $text in $search_engine {
+                                #{$text}transform:  $fadein-rotate_show-transform;
+                            }
                             opacity: 1;
                         }
                      }
@@ -1710,8 +2090,11 @@ html {
                     width: 80vw;
                     background: $bease-color;
                     border-radius: vw(250) 0 vw(250) vw(250);
-                    transform: translateY(-10%);
-
+                    $facility-box-transform: translateY(-10%);
+                    transform: $facility-box-transform;
+                    @each $text in $search_engine {
+                        #{$text}transform: $facility-box-transform;
+                    }
                     @include m.mq(pc01) {
                         position: absolute;
                         top: 10%;
@@ -1719,7 +2102,11 @@ html {
                         width: 40vw;
                         height: auto;
                         border-radius: vw(100) 0 vw(100) vw(100);
-                        transform: translateY(0%);
+                        $facility-box-transform: translateY(0%);
+                        transform: $facility-box-transform;
+                        @each $text in $search_engine {
+                            #{$text}transform: $facility-box-transform;
+                        }
                     }
     
                     &-inner {
@@ -1967,7 +2354,7 @@ html {
         @include m.mq(pc01) {
             display: flex;
             justify-content: space-between;
-            padding-top: vw(50);
+            padding-top: vw(0);
 
             .logo {
                display: none;
@@ -1975,10 +2362,11 @@ html {
         }
         &-contents {
             @include m.mq(pc01) {
-                width: 80vw;
                 display: flex;
                 align-items: flex-end;
                 justify-content:space-between;
+                margin-top: vw(100);
+                width: 80vw;
             }
             &-inner {
                 margin-bottom: vw(130);
@@ -2145,8 +2533,9 @@ html {
                             margin-left: vw(10);
                             &-list {
                                 &-item {
+                                    margin-bottom: vw(2);
                                     a {
-                                        font-size: vw(18);
+                                        font-size: vw(20);
                                     }
                                 }
                             }
@@ -2184,7 +2573,11 @@ html {
                     left: 0;
                     width: vw(600);
                     height: vw(600);
-                    animation: circle-turns-Anime 10s linear infinite;
+                    $page-top-btn-animation: circle-turns-Anime 10s linear infinite;
+                    animation: $page-top-btn-animation;
+                    @each $text in $search_engine {
+                        #{$text}animation: $page-top-btn-animation;
+                    }
 
                     @include m.mq(pc01) {
                         width: vw(130);
@@ -2193,20 +2586,40 @@ html {
                 }
                 @keyframes circle-turns-Anime {
                     0% {
-                        transform: rotate(0deg);
+                        $circle-turns-Anime0-transform: rotate(0deg);
+                        transform: $circle-turns-Anime0-transform;
+                        transform: $circle-turns-Anime0-transform;
+                        @each $text in $search_engine {
+                            #{$text}transform: $circle-turns-Anime0-transform;
+                        }
                     }
                     100% {
-                        transform: rotate(360deg);
+                        $circle-turns-Anime100-transform: rotate(360deg);
+                        transform: $circle-turns-Anime100-transform;
+                        transform: $circle-turns-Anime100-transform;
+                        @each $text in $search_engine {
+                            #{$text}transform: $circle-turns-Anime100-transform;
+                        }
                     }
                 }
             }
         }
         .footer-slider-text {
             width: 100vw;
-            transform: translateY(vw(130));
+            $footer-slider-text: translateY(vw(130));
+            transform: $footer-slider-text;
+            transform: $footer-slider-text;
+            @each $text in $search_engine {
+                #{$text}transform: $footer-slider-text;
+            }
 
             @include m.mq(pc01) {
-                transform: translateY(vw(75));
+                $footer-slider-text: translateY(vw(75));
+                transform: $footer-slider-text;
+                transform: $footer-slider-text;
+                @each $text in $search_engine {
+                    #{$text}transform: $footer-slider-text;
+                }
             }
             &-item {
                 @include display001;
