@@ -1085,8 +1085,10 @@ html body .feature-navi-list-item a .arrow {
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
 }
-html body .main-inner {
-  overflow-x: hidden;
+@media screen and (min-width : 768px) {
+  html body .main-inner {
+    overflow-x: hidden;
+  }
 }
 html body .main .break-sp {
   display: none;
