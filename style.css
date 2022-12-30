@@ -1826,7 +1826,7 @@ html body .main .topics-list-item-inner .date {
 @media screen and (min-width : 768px) {
   html body .main .topics-list-item-inner .date {
     margin-bottom: 0.5208333333vw;
-    font-size: 0.5208333333vw;
+    font-size: 1.0416666667vw;
   }
 }
 html body .main .topics-list-item-inner .title {
@@ -1851,8 +1851,10 @@ html body .main .topics-list-item-inner .text {
   display: -webkit-box;
   box-orient: vertical;
   -webkit-box-orient: vertical;
-  line-clamp: 2;
+  -ms-box-orient: vertical;
   -webkit-line-clamp: 2;
+  -moz-line-clamp: 2;
+  -ms-line-clamp: 2;
 }
 @media screen and (min-width : 768px) {
   html body .main .topics-list-item-inner .text {
@@ -1880,7 +1882,7 @@ html body .main .topics-list-item .column {
     left: -1.0416666667vw;
     width: 10.4166666667vw;
     height: 2.34375vw;
-    font-size: 0.5208333333vw;
+    font-size: 1.0416666667vw;
   }
 }
 html body .main .topics-list-item .column::before {
