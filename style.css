@@ -1131,7 +1131,6 @@ html body .main .mv {
   position: relative;
   padding-top: 11.9791666667vw;
   margin-bottom: 36.4583333333vw;
-  overflow-x: hidden;
 }
 @media screen and (min-width : 768px) {
   html body .main .mv {
@@ -1148,7 +1147,6 @@ html body .main .mv {
 html body .main .mv .fade_slide {
   width: 100vw;
   height: 104.1666666667vw;
-  overflow: hidden;
   border-radius: 0 0 15.625vw 15.625vw;
 }
 @media screen and (min-width : 768px) {
