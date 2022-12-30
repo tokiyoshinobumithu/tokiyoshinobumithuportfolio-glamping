@@ -996,7 +996,9 @@ html {
     }
     .main {
         &-inner {
-            overflow-x: hidden;
+            @include m.mq(pc01) {
+                overflow-x: hidden;
+            }
         }
         .break-sp {
             display: none;
