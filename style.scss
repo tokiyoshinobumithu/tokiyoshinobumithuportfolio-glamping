@@ -995,6 +995,9 @@ html {
 
     }
     .main {
+        &-inner {
+            overflow-x: hidden;
+        }
         .break-sp {
             display: none;
 
@@ -1036,6 +1039,7 @@ html {
             position: relative;
             padding-top: vw(230);
             margin-bottom: vw(700);
+            overflow-x: hidden;
             @include m.mq(pc01) {
                 display: flex;
                 padding-top: vw(150);
@@ -1449,6 +1453,7 @@ html {
             width: 100vw;
             height: auto;
             background: $backgraund-color;
+            overflow-x: hidden;
             &-title {
                 margin-top: vw(200);
                 display: flex;
