@@ -1,3 +1,5 @@
+@use "sabu" as m;
+
 html {
    $bease-color: #fff;
    $main-color: #ffc53f;
@@ -1574,11 +1576,12 @@ html {
                         margin: vw(130) auto 0;
                         width: 85%;
                         background: $bease-color;
-                        border-radius:0 0 vw(50) vw(50);
-
+                        overflow: hidden;
+                        
                         @include m.mq(pc01) {
                             margin: 0 auto;
                             padding:vw(40) 7.5% 0;
+                            border-radius:0 0 vw(50) vw(50);
                         }
 
                         .date {
