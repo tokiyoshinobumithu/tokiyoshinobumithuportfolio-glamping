@@ -295,11 +295,18 @@ html {
                     transform: rotate(0);
                     opacity: 1;
                 }
-                100% {
+                50% {
                     border-top: solid vw(5)  $bease-color;
                     border-right: solid vw(5) transparent;
                     border-bottom: solid vw(5) transparent;
                     border-left: solid vw(5) $bease-color;
+                    opacity: 1;
+                }
+                100% {
+                    border-top: solid vw(5)  rgba($color: $bease-color, $alpha: .5);
+                    border-right: solid vw(5) transparent;
+                    border-bottom: solid vw(5) transparent;
+                    border-left: solid vw(5) rgba($color: $bease-color, $alpha: .5);
                     transform: rotate(1080deg);
                     opacity: 1;
                 }
@@ -313,17 +320,24 @@ html {
                 border-right: solid vw(3) $bease-color;
                 border-bottom: solid vw(3) transparent;
                 border-left: solid vw(3) transparent;
-                animation: spinner-box-item-small-anime 8s cubic-bezier(.47,-0.01,0,1.51);
+                animation: spinner-box-item-small-anime 10s cubic-bezier(.47,-0.01,0,1.51);
             }
             @keyframes spinner-box-item-small-anime {
                 0% {
                     transform: rotate(0deg);
                     opacity: 1;
                 }
-                100% {
+                50% {
                     border-top: solid vw(3)  transparent;
                     border-right: solid vw(3) $bease-color;
                     border-bottom: solid vw(3) $bease-color;
+                    border-left: solid vw(3) transparent;
+                    opacity: 1;
+                }
+                100% {
+                    border-top: solid vw(3)  transparent;
+                    border-right: solid vw(3) rgba($color: $bease-color, $alpha: .5);
+                    border-bottom: solid vw(3) rgba($color: $bease-color, $alpha: .5);
                     border-left: solid vw(3) transparent;
                     transform: rotate(1080deg);
                     opacity: 1;
