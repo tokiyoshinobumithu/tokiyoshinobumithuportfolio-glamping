@@ -1085,6 +1085,9 @@ html body .feature-navi-list-item a .arrow {
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
 }
+html body .main-inner {
+  overflow-x: hidden;
+}
 html body .main .break-sp {
   display: none;
 }
@@ -1128,6 +1131,7 @@ html body .main .mv {
   position: relative;
   padding-top: 11.9791666667vw;
   margin-bottom: 36.4583333333vw;
+  overflow-x: hidden;
 }
 @media screen and (min-width : 768px) {
   html body .main .mv {
@@ -1697,6 +1701,7 @@ html body .main .topics {
   width: 100vw;
   height: auto;
   background: #ffc698;
+  overflow-x: hidden;
 }
 html body .main .topics-title {
   margin-top: 10.4166666667vw;
