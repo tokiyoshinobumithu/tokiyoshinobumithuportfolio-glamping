@@ -1,7 +1,4 @@
 @charset "UTF-8";
-html {
-  scroll-behavior: smooth;
-}
 html body {
   position: relative;
   font-weight: bold;
@@ -1087,9 +1084,6 @@ html body .feature-navi-list-item a .arrow {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
-}
-html body .main {
-  overflow-x: hidden;
 }
 html body .main .break-sp {
   display: none;
