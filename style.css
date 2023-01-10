@@ -256,9 +256,15 @@ html body .spinner-box-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 7.8125vw;
-  height: 7.8125vw;
+  width: 20.8333333333vw;
+  height: 20.8333333333vw;
   z-index: 3000;
+}
+@media screen and (min-width : 768px) {
+  html body .spinner-box-item {
+    width: 15.625vw;
+    height: 15.625vw;
+  }
 }
 html body .spinner-box-item .spinner-box-item-big,
 html body .spinner-box-item .spinner-box-item-small {
@@ -267,10 +273,10 @@ html body .spinner-box-item .spinner-box-item-small {
   opacity: 0;
 }
 html body .spinner-box-item .spinner-box-item-big {
-  top: 34%;
-  left: 35%;
-  width: 7.8125vw;
-  height: 7.8125vw;
+  top: 29%;
+  left: 29%;
+  width: 20.8333333333vw;
+  height: 20.8333333333vw;
   border-top: solid 0.2604166667vw transparent;
   border-right: solid 0.2604166667vw transparent;
   border-bottom: solid 0.2604166667vw transparent;
@@ -279,6 +285,14 @@ html body .spinner-box-item .spinner-box-item-big {
   -webkit-animation: spinner-box-item-big-anime 8s cubic-bezier(0.47, -0.01, 0, 1.51);
   -moz-animation: spinner-box-item-big-anime 8s cubic-bezier(0.47, -0.01, 0, 1.51);
   -ms-animation: spinner-box-item-big-anime 8s cubic-bezier(0.47, -0.01, 0, 1.51);
+}
+@media screen and (min-width : 768px) {
+  html body .spinner-box-item .spinner-box-item-big {
+    top: 30%;
+    right: 50%;
+    width: 13.0208333333vw;
+    height: 13.0208333333vw;
+  }
 }
 @-webkit-keyframes spinner-box-item-big-anime {
   0% {
@@ -323,16 +337,22 @@ html body .spinner-box-item .spinner-box-item-big {
   }
 }
 html body .spinner-box-item .spinner-box-item-small {
-  top: 50%;
-  left: 50%;
-  width: 5.2083333333vw;
-  height: 5.2083333333vw;
+  top: 40%;
+  left: 40%;
+  width: 15.625vw;
+  height: 15.625vw;
   border-top: solid 0.15625vw transparent;
   border-right: solid 0.15625vw #fff;
   border-bottom: solid 0.15625vw transparent;
   border-left: solid 0.15625vw transparent;
   -webkit-animation: spinner-box-item-small-anime 10s cubic-bezier(0.47, -0.01, 0, 1.51);
           animation: spinner-box-item-small-anime 10s cubic-bezier(0.47, -0.01, 0, 1.51);
+}
+@media screen and (min-width : 768px) {
+  html body .spinner-box-item .spinner-box-item-small {
+    width: 10.4166666667vw;
+    height: 10.4166666667vw;
+  }
 }
 @-webkit-keyframes spinner-box-item-small-anime {
   0% {
@@ -1684,7 +1704,7 @@ html body .main .section-title-lo {
   }
 }
 html body .main .section-title-lo .section-title-jp {
-  margin: 1.0416666667vw auto 26.0416666667vw;
+  margin: 1.0416666667vw auto 15.625vw;
   font-size: 4.1666666667vw;
   letter-spacing: 0.5208333333vw;
 }
