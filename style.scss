@@ -257,9 +257,13 @@ html {
         &-item {
             position: relative;
             @include display001;
-            width: vw(150);
-            height: vw(150);
+            width: vw(400);
+            height: vw(400);
             z-index: 3000;
+            @include m.mq(pc01) {
+                width: vw(300);
+                height: vw(300);
+            }
             .spinner-box-item-big,
             .spinner-box-item-small {
                 position: absolute;
@@ -267,10 +271,10 @@ html {
                 opacity: 0;
             }
             .spinner-box-item-big {
-                top: 34%;
-                left: 35%;
-                width: vw(150);
-                height: vw(150);
+                top: 29%;
+                left: 29%;
+                width: vw(400);
+                height: vw(400);
                 border-top: solid vw(5)  transparent;
                 border-right: solid vw(5) transparent;
                 border-bottom: solid vw(5) transparent;
@@ -279,6 +283,13 @@ html {
                 animation: $spinner-box-item-big-anime;
                 @each $text in $search_engine {
                     #{$text}animation: $spinner-box-item-big-anime;
+                }
+
+                @include m.mq(pc01) {
+                    top: 30%;
+                    right: 50%;
+                    width: vw(250);
+                    height: vw(250);
                 }
             }
             $spinner-box-item-anime-transform0: rotate(0);
@@ -310,15 +321,20 @@ html {
                 }
             }
             .spinner-box-item-small {
-                top: 50%;
-                left: 50%;
-                width: vw(100);
-                height: vw(100);
+                top: 40%;
+                left: 40%;
+                width: vw(300);
+                height: vw(300);
                 border-top: solid vw(3)  transparent;
                 border-right: solid vw(3) $bease-color;
                 border-bottom: solid vw(3) transparent;
                 border-left: solid vw(3) transparent;
                 animation: spinner-box-item-small-anime 10s cubic-bezier(.47,-0.01,0,1.51);
+
+                @include m.mq(pc01) {
+                    width: vw(200);
+                    height: vw(200);
+                }
             }
             @keyframes spinner-box-item-small-anime {
                 0% {
@@ -1436,7 +1452,7 @@ html {
             }
 
             .section-title-jp {
-                margin: vw(20) auto vw(500);
+                margin: vw(20) auto vw(300);
                 font-size: vw(80);
                 letter-spacing: vw(10);
     
