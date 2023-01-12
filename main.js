@@ -1,10 +1,10 @@
 $(function(){
   $(window).on('load',function(){
-    $('.spinner-box').delay(1000).fadeOut(2000);
-    $('.spinner-box-item').delay(3000).fadeOut(2500);
+    $(".spinner-box").delay(1000).fadeOut(2000);
+    $(".spinner-box-item").delay(3000).fadeOut(2500);
   }),
   $(function (){
-    $('body, html').animate( {
+    $("body, html").animate( {
       scrollTop:0
     },'1');
   });
@@ -108,7 +108,7 @@ $(function () {
 });
   
 $(function() {
-  $('.top-slider').slick({
+  $(".top-slider").slick({
     autoplay: true,
     cssEase: 'linear',
     infinite: true,
@@ -142,7 +142,7 @@ $(function() {
     ],
   });
 
-  $('.bottom-slider').slick({
+  $(".bottom-slider").slick({
     autoplay: true,
     cssEase: 'linear',
     infinite: true,
@@ -176,7 +176,7 @@ $(function() {
 });
 
 $(function () {
-  $('.footer-slider-text').slick ({
+  $(".footer-slider-text").slick ({
     autoplay:true,
     cssEase:'linear',
     infinite:true,
@@ -210,7 +210,7 @@ $(function () {
 });
 
 $(function () {
-  $('.page-top-btn').click(function () {
+  $(".page-top-btn").click(function () {
     $('body, html').animate( {
       scrollTop:0
     },600);
